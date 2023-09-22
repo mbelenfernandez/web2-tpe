@@ -1,6 +1,6 @@
 # web2-tpe
-Integrantes: Julián Gonzalez José y María Belén Fernández
+Integrantes: Julián Gonzalez José (juliangonzalez132546@gmail.com) y María Belén Fernández (mbelenfernandez9@gmail.com)
 
-Tema: Letras de canciones. Un repositorio de canciones con sus letras, indicando en artista que la interpreta y categorizadas por género musical (Rock, Pop, Folklore, etc)
+Tema: Letras de canciones. Un repositorio de canciones con sus letras categorizadas por género musical (Rock, Pop, Tango, etc)
 
 DER: en construcción
