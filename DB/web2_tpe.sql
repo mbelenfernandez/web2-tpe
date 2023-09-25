@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-09-2023 a las 00:19:40
+-- Tiempo de generación: 25-09-2023 a las 02:14:51
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `cancion` (
   `id_cancion` int(11) NOT NULL COMMENT 'Identificador de la canción',
   `titulo` varchar(70) NOT NULL COMMENT 'Título de la canción',
+  `artista` varchar(70) NOT NULL COMMENT 'Artista o grupo musical que interpreta la canción',
   `letra` text NOT NULL COMMENT 'Letra de la canción',
   `duracion` int(11) NOT NULL COMMENT 'Duración de la canción (en minutos)',
   `id_genero` int(11) NOT NULL COMMENT 'Género musical de la canción'
@@ -45,15 +46,6 @@ CREATE TABLE `genero` (
   `id_genero` int(11) NOT NULL COMMENT 'Identificador de género musical',
   `descripcion` varchar(50) NOT NULL COMMENT 'Descripción del género musical'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Listado de géneros musicales';
-
---
--- Volcado de datos para la tabla `genero`
---
-
-INSERT INTO `genero` (`id_genero`, `descripcion`) VALUES
-(1, 'Rock'),
-(2, 'Pop'),
-(3, 'Tango');
 
 --
 -- Índices para tablas volcadas
@@ -86,7 +78,7 @@ ALTER TABLE `cancion`
 -- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de género musical', AUTO_INCREMENT=4;
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de género musical';
 
 --
 -- Restricciones para tablas volcadas
