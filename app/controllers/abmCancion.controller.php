@@ -16,4 +16,9 @@ class AbmCancionController {
         $canciones = $this->model->getCanciones();
         $this->view->listarCanciones($canciones);
     }
+
+    function  removeCanciones ($id){
+        $this->model->deleteCancion($id);
+        header('Location: ' . BASE_URL);
+    }
 }

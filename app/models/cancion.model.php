@@ -24,4 +24,9 @@ class CancionModel{
     
         return $cancion;
     }
+
+    function deleteCancion($id) {
+        $query = $this->db->prepare('DELETE FROM cancion WHERE id_cancion=?');
+        $query->execute([$id]);
+    }
 }

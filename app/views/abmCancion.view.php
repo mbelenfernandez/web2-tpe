@@ -11,8 +11,8 @@ class AbmCancionView
             <thead>
                 <th>Id</th>
                 <th>Título</th>
-                <th>Artista</th>    
-                <th>Duración</th>                            
+                <th>Artista</th>
+                <th>Duración</th>
                 <th>Acción</th>
             </thead>
             <tbody>
@@ -29,10 +29,13 @@ class AbmCancionView
                         </td>
                         <td>
                             <?php echo $cancion->duracion ?>
-                        </td>                                                
+                        </td>
                         <td>
-                            <button>Editar</button>
-                            <button>Borrar</button>
+                            <?php echo $cancion->id_cancion ?>
+                        </td>
+                        <td>
+                            <a href="editarCancion/<?= $cancion->id_genero ?>" type="button" class='btn btn-success ml-auto'>Editar</a>
+                            <a href="eliminarCancion/<?= $cancion->id_genero ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
                         </td>
                     </tr>
                 <?php } ?>

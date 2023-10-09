@@ -35,4 +35,9 @@ class AbmGeneroController
             echo "Error insertando género";
         }
     }
+
+    function  removeGeneros ($id){
+        $this->model->deleteGenero($id);
+        header('Location: ' . BASE_URL);
+    }
 }

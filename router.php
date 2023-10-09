@@ -55,6 +55,14 @@ switch ($params[0]) {
         $controller = new AbmGeneroController();
         $controller->addGenero();
         break;
+    case 'eliminarGenero':
+        $controller = new AbmGeneroController();
+        $controller->removeGeneros($params[1]);
+        break;
+    case 'eliminarCancion':
+        $controller = new AbmCancionController();
+        $controller->removeCanciones($params[1]);
+        break;
     default:
         echo "404 Page Not Found";
         break;

@@ -23,7 +23,7 @@ class GeneroModel{
     }
 
     function deleteGenero($id) {
-        $query = $this->db->prepare('DELETE genero WHERE id_genero=?');
+        $query = $this->db->prepare('DELETE FROM genero WHERE id_genero=?');
         $query->execute([$id]);
     }
 

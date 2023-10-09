@@ -1,5 +1,7 @@
 <?php
 
+use function PHPSTORM_META\type;
+
 class AbmGeneroView
 {
     function listarGeneros($generos)
@@ -26,8 +28,8 @@ class AbmGeneroView
                             <?php echo $genero->descripcion ?>
                         </td>
                         <td>
-                            <button>Editar</button>
-                            <button>Borrar</button>
+                            <a href="editarGenero/<?= $genero->id_genero ?>" type="button" class='btn btn-success ml-auto'>Editar</a>
+                            <a href="eliminarGenero/<?= $genero->id_genero ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
                         </td>
                     </tr>
                 <?php } ?>
