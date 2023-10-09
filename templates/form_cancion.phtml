@@ -1,0 +1,30 @@
+<form action="agregarCancion" method="POST">
+    <div class="row">
+        <div class="col-9">
+            <div>
+                <label for="titulo">Título</label>
+                <input required name="titulo" type="text">
+            </div>
+            <div>
+                <label for="artista">Artista</label>
+                <input required name="artista" type="text">
+            </div>
+            <div>
+                <label for="duracion">Duración</label>
+                <input required name="duracion" type="text">
+            </div>
+            <div>
+                <label for="letra">Letra</label>
+                <input required name="letra" type="text">
+            </div>
+            <div>
+                <label for="id_genero">Género</label>
+                <select name="id_genero" id="id_genero">
+                    <option value="seleccionar">Seleccionar...</option>
+                    <option value="1">1</option>                    
+                </select>
+            </div>
+        </div>
+    </div>
+    <button type="submit">Guardar</button>
+</form>

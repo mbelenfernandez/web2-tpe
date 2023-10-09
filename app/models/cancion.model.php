@@ -25,6 +25,12 @@ class CancionModel{
         return $cancion;
     }
 
+    function insertCancion($titulo,$artista,$duracion,$letra,$id_genero) {
+        $query = $this->db->prepare('INSERT INTO cancion (titulo, artista, duracion, letra, id_genero) VALUES(?,?,?,?,?)');
+        $query->execute([$titulo,$artista,$duracion,$letra,$id_genero]);
+        return $this->db->lastInsertId();
+    }
+
     function deleteCancion($id) {
         $query = $this->db->prepare('DELETE FROM cancion WHERE id_cancion=?');
         $query->execute([$id]);

@@ -63,6 +63,10 @@ switch ($params[0]) {
         $controller = new AbmCancionController();
         $controller->removeCanciones($params[1]);
         break;
+    case 'agregarCancion':
+        $controller = new AbmCancionController();
+        $controller->addCancion();
+        break;
     default:
         echo "404 Page Not Found";
         break;

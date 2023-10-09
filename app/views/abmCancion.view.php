@@ -34,15 +34,26 @@ class AbmCancionView
                             <?php echo $cancion->id_cancion ?>
                         </td>
                         <td>
-                            <a href="editarCancion/<?= $cancion->id_genero ?>" type="button" class='btn btn-success ml-auto'>Editar</a>
-                            <a href="eliminarCancion/<?= $cancion->id_genero ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
+                            <a href="editarCancion/<?= $cancion->id_cancion ?>" type="button" class='btn btn-success ml-auto'>Editar</a>
+                            <a href="eliminarCancion/<?= $cancion->id_cancion ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
+        <div>
+            <h3>Agregar nueva canción</h3>
+            <?php require_once 'templates/form_cancion.phtml'; ?>
+        </div>
 
 <?php
+        require_once 'templates/footer.php';
+    }
+
+    function showFormCancion()
+    {
+        require_once 'templates/header.php';
+        require_once 'templates/form_cancion.phtml';
         require_once 'templates/footer.php';
     }
 }
