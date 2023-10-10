@@ -16,7 +16,7 @@ class CancionView
                 </li>
             <?php } ?>
         </ul>
-    <?php
+        <?php
         require_once 'templates/footer.php';
     }
 
@@ -25,25 +25,25 @@ class CancionView
         require_once 'templates/header.php';
         if (isset($cancion[0]) && isset($cancion[0]->titulo)) {
             $titulo = $cancion[0]->titulo;
-            ?>
+        ?>
             <h1>
-            <?php echo $titulo;?>
+                <?php echo $titulo; ?>
             </h1>
-            <?php $artista = $cancion[0]->artista;?>
+            <?php $artista = $cancion[0]->artista; ?>
             <h3>
-            <?php echo $artista;?>
+                <?php echo $artista; ?>
             </h3>
-            <?php $duracion = $cancion[0]->duracion;?>
+            <?php $duracion = $cancion[0]->duracion; ?>
             <h6>
-            <?php echo "Duración: " . $duracion . " minutos";?>
+                <?php echo "Duración: " . $duracion . " minutos"; ?>
             </h6>
-            <?php $letra = $cancion[0]->letra;?>
+            <?php $letra = $cancion[0]->letra; ?>
             <pre>
-            <?php echo $letra;?>
+            <?php echo $letra; ?>
             </pre><?php
-        } else {
-            echo "No se pudo acceder a la propiedad del arreglo";
+                } else {
+                    echo "No se pudo acceder a la propiedad del arreglo";
+                }
+                require_once 'templates/footer.php';
+            }
         }
-        require_once 'templates/footer.php';
-    }
-}

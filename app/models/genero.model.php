@@ -31,4 +31,9 @@ class GeneroModel{
         $query = $this->db->prepare('UPDATE genero SET descripcion=? WHERE id_genero=?');
         $query->execute([$descripcion, $id]);
     }
+
+    function filtroPorGenero($id){
+        $query = $this->db->prepare('SELECT titulo, artista FROM cancion where id_cancion=?');
+        $query->execute([$id]);
+    }
 }

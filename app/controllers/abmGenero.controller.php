@@ -43,8 +43,6 @@ class AbmGeneroController
 
     function editGenero($id){
         $this->view->showFormEditGenero();
-        
-        
 
         if ((!empty($_POST))) {
             $descripcion = $_POST['descripcion'];
