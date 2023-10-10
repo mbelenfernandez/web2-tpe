@@ -42,20 +42,24 @@ class AbmGeneroController
     }
 
     function editGenero($id){
-        $this->view->showFormGenero();
+        $this->view->showFormEditGenero();
         
-        if (!empty($_POST)) {
-            $descripcion = $_POST['descripcion'];
+        
 
+        if ((!empty($_POST))) {
+            $descripcion = $_POST['descripcion'];
+            $id = $_POST['id_genero']; // O de donde provenga el valor de $id
+
+            
             if (empty($descripcion)) {
                 // $this->view->showError("Debe completar todos los campos");
                 echo"Error";
                 return;
             }
 
-            $ides = $this->model->updateGenero($id, $descripcion);
+            $ok = $this->model->updateGenero($id, $descripcion);
     
-            if ($ides) {
+            if ($ok) {
                 // redirigo la usuario a la pantalla principal
                 header('Location: ' . BASE_URL);
             } else {

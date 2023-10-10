@@ -49,4 +49,11 @@ class AbmGeneroView
         require_once 'templates/form_genero.phtml';
         require_once 'templates/footer.php';
     }
+
+    function showFormEditGenero()
+    {
+        require_once 'templates/header.php';
+        require_once 'templates/form_edit_genero.phtml';
+        require_once 'templates/footer.php';
+    }
 }

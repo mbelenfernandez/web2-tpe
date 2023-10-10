@@ -29,6 +29,6 @@ class GeneroModel{
 
     function updateGenero($id, $descripcion) {
         $query = $this->db->prepare('UPDATE genero SET descripcion=? WHERE id_genero=?');
-        $query->execute([$descripcion,$id]);
+        $query->execute([$descripcion, $id]);
     }
 }
