@@ -71,9 +71,13 @@ switch ($params[0]) {
         $controller = new AbmGeneroController();
         $controller->editGenero($params[1]);
         break;
+    case 'updateGenero':
+        $controller = new AbmGeneroController();
+        $controller->updateGenero($params[1]);
+        break;
     case 'canciones':
         $controller = new cancionController();
-        $controller->editGenero($params[1]);
+        // $controller->editGenero($params[1]);
         break;
     default:
         echo "404 Page Not Found";

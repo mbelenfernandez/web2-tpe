@@ -42,27 +42,20 @@ class AbmGeneroController
     }
 
     function editGenero($id){
-        $this->view->showFormEditGenero();
+        $generos = $this->model->getGeneros();
+        $this->view->listarGeneros($generos, $id);
+    }
 
-        if ((!empty($_POST))) {
+    function updateGenero($id){
+        if ($_POST) {
             $descripcion = $_POST['descripcion'];
-            $id = $_POST['id_genero']; // O de donde provenga el valor de $id
 
-            
-            if (empty($descripcion)) {
+            if (isset($descripcion) && !empty($descripcion)) {
                 // $this->view->showError("Debe completar todos los campos");
-                echo"Error";
-                return;
-            }
-
-            $ok = $this->model->updateGenero($id, $descripcion);
-    
-            if ($ok) {
-                // redirigo la usuario a la pantalla principal
+                $this->model->updateGenero($id, $descripcion);
                 header('Location: ' . BASE_URL);
             } else {
-                // $this->view->showerror("Error al insertar la deuda");
-                echo"errorrrr";
+                echo "error";
             }
         }
     }
