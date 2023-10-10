@@ -37,7 +37,7 @@ switch ($params[0]) {
         break;
     case 'cancion':
         $controller = new CancionController();
-        $controller->showCancion($params[1]);
+        $controller->showCancion(1);
         break;
     case 'login':
         $controller = new LoginController();
