@@ -18,7 +18,7 @@ if (!empty($_GET['action'])) {
 // abmCancion    ->  listarCanciones();
 // agregar       ->  addGenero();
 // eliminar/:ID  ->  removeGenero($id); 
-// finalizar/:ID ->  finishGenero($id);
+// editar/:ID    ->  editGenero($id);
 
 
 
@@ -66,6 +66,10 @@ switch ($params[0]) {
     case 'agregarCancion':
         $controller = new AbmCancionController();
         $controller->addCancion();
+        break;
+    case 'editarGenero':
+        $controller = new AbmGeneroController();
+        $controller->editGenero($params[1]);
         break;
     default:
         echo "404 Page Not Found";
