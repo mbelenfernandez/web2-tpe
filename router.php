@@ -24,7 +24,6 @@ if (!empty($_GET['action'])) {
 
 $controllerGenero = new GeneroController();
 $controllerCancion = new CancionController();
-$controllerLogin = new LoginController();
 $controllerAbmGenero = new AbmGeneroController();
 $controllerAbmCancion = new AbmCancionController();
 $controllerAuth= new AuthController();
