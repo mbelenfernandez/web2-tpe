@@ -1,7 +1,7 @@
 <?php
 require_once "./app/controllers/genero.controller.php";
 require_once "./app/controllers/cancion.controller.php";
-require_once "./app/controllers/login.controller.php";
+require_once "./app/controllers/auth.controller.php";
 require_once "./app/controllers/abmGenero.controller.php";
 require_once "./app/controllers/abmCancion.controller.php";
 
@@ -39,10 +39,6 @@ switch ($params[0]) {
         $controller = new CancionController();
         $controller->showCancion(1);
         break;
-    case 'login':
-        $controller = new LoginController();
-        $controller->showLogin();
-        break;
     case 'abmGenero':
         $controller = new AbmGeneroController();
         $controller->listarGeneros();
@@ -71,10 +67,18 @@ switch ($params[0]) {
         $controller = new AbmGeneroController();
         $controller->editGenero($params[1]);
         break;
-    case 'canciones':
-        $controller = new cancionController();
-        $controller->editGenero($params[1]);
+    case 'login':
+        $controller = new AuthController();
+        $controller->showLogin(); 
         break;
+    case 'auth':
+        $controller = new AuthController();
+        $controller->auth();
+        break;
+    case 'logout':
+        $controller = new AuthController();
+        $controller->logout();
+        break;    
     default:
         echo "404 Page Not Found";
         break;

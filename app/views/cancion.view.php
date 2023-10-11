@@ -7,11 +7,11 @@ class CancionView
     {
         require_once 'templates/header.php';
 ?>
-        <ul>
+        <ul class="list-group">
             <?php foreach ($canciones as $cancion) { ?>
-                <li>
+                <li class="list-group-item">
                     <div>
-                        <b><a><?php echo $cancion->titulo ?></a></b>
+                        <a href="#" class="text-decoration-none text-dark"><b><?php echo $cancion->titulo ?></b></a>
                     </div>
                 </li>
             <?php } ?>
@@ -25,25 +25,25 @@ class CancionView
         require_once 'templates/header.php';
         if (isset($cancion[0]) && isset($cancion[0]->titulo)) {
             $titulo = $cancion[0]->titulo;
-        ?>
-            <h1>
-                <?php echo $titulo; ?>
-            </h1>
-            <?php $artista = $cancion[0]->artista; ?>
-            <h3>
-                <?php echo $artista; ?>
-            </h3>
-            <?php $duracion = $cancion[0]->duracion; ?>
-            <h6>
-                <?php echo "Duración: " . $duracion . " minutos"; ?>
-            </h6>
-            <?php $letra = $cancion[0]->letra; ?>
-            <pre>
-            <?php echo $letra; ?>
-            </pre><?php
-                } else {
-                    echo "No se pudo acceder a la propiedad del arreglo";
-                }
-                require_once 'templates/footer.php';
-            }
+            $artista = $cancion[0]->artista;
+            $duracion = $cancion[0]->duracion;
+            $letra = $cancion[0]->letra;
+            $genero = $cancion[0]->descripcion;
+            ?>
+        
+            <div class="container mt-4">
+                <h1 class="display-4"><?php echo $genero; ?></h1>
+                <h2><?php echo $titulo; ?></h2>
+                <h3><?php echo $artista; ?></h3>
+                <h6><?php echo "Duración: " . $duracion . " minutos"; ?></h6>
+                <pre class="mt-4"><?php echo $letra; ?></pre>
+            </div>
+        
+            <?php
+        } else {
+            echo "No se pudo acceder a la propiedad del arreglo";
         }
+        require_once 'templates/footer.php';
+    }    
+    
+}

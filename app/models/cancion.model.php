@@ -1,10 +1,13 @@
 <?php
 
+require_once 'config.php'; 
+
 class CancionModel{
     private $db;
 
     function __construct() {
         $this->db = new PDO('mysql:host=localhost;dbname=web2_tpe;charset=utf8', 'root', '');
+
     }
 
     function getCanciones() {
@@ -17,7 +20,7 @@ class CancionModel{
     }
 
     function getCancionById($id) {
-        $query = $this->db->prepare('SELECT * FROM cancion WHERE id_cancion = ?');
+        $query = $this->db->prepare('SELECT * FROM cancion c INNER JOIN genero g ON c.id_genero = g.id_genero WHERE c.id_cancion = ?');
         $query->execute([$id]);
     
         $cancion = $query->fetchAll(PDO::FETCH_OBJ);

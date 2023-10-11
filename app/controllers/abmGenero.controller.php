@@ -9,6 +9,7 @@ class AbmGeneroController
 
     public function __construct()
     {
+        AuthHelper::verify();
         $this->view = new AbmGeneroView();
         $this->model = new GeneroModel();
     }

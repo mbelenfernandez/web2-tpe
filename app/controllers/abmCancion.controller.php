@@ -7,6 +7,7 @@ class AbmCancionController {
     private $view;
 
     public function __construct() {
+       AuthHelper::verify();
        $this->view = new AbmCancionView(); 
        $this->model = new CancionModel();
 
