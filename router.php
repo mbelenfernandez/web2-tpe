@@ -20,8 +20,6 @@ if (!empty($_GET['action'])) {
 // eliminar/:ID  ->  removeGenero($id); 
 // editar/:ID    ->  editGenero($id);
 
-
-
 $controllerGenero = new GeneroController();
 $controllerCancion = new CancionController();
 $controllerAbmGenero = new AbmGeneroController();
@@ -41,14 +39,10 @@ switch ($params[0]) {
     case 'cancion':
         $controllerCancion->showCancion(1);
         break;
-    case 'login':
-        $controllerLogin->showLogin();
-        break;
     case 'abmGenero':
         $controllerAbmGenero->listarGeneros();
         break;
     case 'abmCancion':
-        
         $controllerAbmCancion->listarCanciones();
         break;
     case 'agregarGenero':
