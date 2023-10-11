@@ -22,62 +22,55 @@ if (!empty($_GET['action'])) {
 
 
 
+$controllerGenero = new GeneroController();
+$controllerCancion = new CancionController();
+$controllerLogin = new LoginController();
+$controllerAbmGenero = new AbmGeneroController();
+$controllerAbmCancion = new AbmCancionController();
 
 // parsea la accion para separar accion real de parametros
 $params = explode('/', $action);
 
 switch ($params[0]) {
     case 'generos':
-        $controller = new GeneroController();
-        $controller->showGenero();
+        $controllerGenero->showGenero();
         break;
     case 'canciones':
-        $controller = new CancionController();
-        $controller->showCanciones();
+        $controllerCancion->showCanciones();
         break;
     case 'cancion':
-        $controller = new CancionController();
-        $controller->showCancion(1);
+        $controllerCancion->showCancion(1);
         break;
     case 'login':
-        $controller = new LoginController();
-        $controller->showLogin();
+        $controllerLogin->showLogin();
         break;
     case 'abmGenero':
-        $controller = new AbmGeneroController();
-        $controller->listarGeneros();
+        $controllerAbmGenero->listarGeneros();
         break;
     case 'abmCancion':
-        $controller = new AbmCancionController();
-        $controller->listarCanciones();
+        
+        $controllerAbmCancion->listarCanciones();
         break;
     case 'agregarGenero':
-        $controller = new AbmGeneroController();
-        $controller->addGenero();
+        $controllerAbmGenero->addGenero();
         break;
     case 'eliminarGenero':
-        $controller = new AbmGeneroController();
-        $controller->removeGeneros($params[1]);
+        $controllerAbmGenero->removeGeneros($params[1]);
         break;
     case 'eliminarCancion':
-        $controller = new AbmCancionController();
-        $controller->removeCanciones($params[1]);
+        $controllerAbmCancion->removeCanciones($params[1]);
         break;
     case 'agregarCancion':
-        $controller = new AbmCancionController();
-        $controller->addCancion();
+        $controllerAbmCancion->addCancion();
         break;
     case 'editarGenero':
-        $controller = new AbmGeneroController();
-        $controller->editGenero($params[1]);
+        $controllerAbmGenero->editGenero($params[1]);
         break;
     case 'updateGenero':
-        $controller = new AbmGeneroController();
-        $controller->updateGenero($params[1]);
+        $controllerAbmGenero->updateGenero($params[1]);
         break;
-    case 'canciones':
-        $controller = new cancionController();
-        // $controller->editGenero($params[1]);
+    case 'filtroCanciones':
+        $controllerCancion->filtroCanciones($params[1]);
         break;
     default:
         echo "404 Page Not Found";

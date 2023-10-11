@@ -2,11 +2,10 @@
 
 class CancionView
 {
-
     function showCanciones($canciones)
     {
         require_once 'templates/header.php';
-?>
+        ?>
         <ul>
             <?php foreach ($canciones as $cancion) { ?>
                 <li>
@@ -46,4 +45,6 @@ class CancionView
                 }
                 require_once 'templates/footer.php';
             }
+
         }
+

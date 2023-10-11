@@ -15,9 +15,4 @@ class GeneroController {
         $generos = $this->model->getGeneros();
         $this->view->showGenero($generos);
     }
-
-    function filtroGenero($id){
-        $canciones = $this->model->filtroPorGenero($id);
-        $this->view->showCanciones($canciones);
-    }
 }

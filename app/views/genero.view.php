@@ -9,7 +9,7 @@ class GeneroView {
         <ul>
             <?php foreach ($generos as $genero) { ?>
                 <li>
-                    <b><a href="canciones"><?php echo $genero->descripcion?></a>
+                    <b><a href="filtroCanciones/<?php echo $genero->id_genero?>"><?php echo $genero->descripcion?></a>
                 </li>
             <?php } ?>
         </ul>
