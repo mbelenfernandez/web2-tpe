@@ -11,7 +11,7 @@ class GeneroView
         <ul class="list-group">
             <?php foreach ($generos as $genero) { ?>
                 <li class="list-group-item">
-                    <a href="canciones"><?php echo $genero->descripcion ?></a>
+                    <b><a href="filtroCanciones/<?php echo $genero->id_genero?>"><?php echo $genero->descripcion?></a>
                 </li>
             <?php } ?>
             <li class="list-group-item">

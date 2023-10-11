@@ -38,4 +38,10 @@ class CancionModel{
         $query = $this->db->prepare('DELETE FROM cancion WHERE id_cancion=?');
         $query->execute([$id]);
     }
+
+    function filtroPorCancion($id){
+        $query = $this->db->prepare('SELECT titulo, artista FROM cancion where id_genero=?');
+        $query->execute([$id]);
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 }
