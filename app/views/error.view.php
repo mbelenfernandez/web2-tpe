@@ -1,15 +1,10 @@
 <?php 
 
-class GeneroView { 
+class ErrorView { 
 
     public function showError($error) {
         require 'templates/header.php';
-        
-        echo "
-            <div class='alert alert-danger' role='alert'>
-                $error
-            </div> 
-        ";
+        require_once 'templates/show_error.phtml';
         require 'templates/footer.php';
     }
 }

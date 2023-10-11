@@ -1,0 +1,19 @@
+<?php
+if (isset($cancion[0]) && isset($cancion[0]->titulo)) {
+    $titulo = $cancion[0]->titulo;
+    $artista = $cancion[0]->artista;
+    $duracion = $cancion[0]->duracion;
+    $letra = $cancion[0]->letra;
+    $genero = $cancion[0]->descripcion;
+?>
+    <div class="container mt-4">
+        <h1 class="display-4"><?php echo $genero; ?></h1>
+        <h2><?php echo $titulo; ?></h2>
+        <h3><?php echo $artista; ?></h3>
+        <h6><?php echo "Duración: " . $duracion . " minutos"; ?></h6>
+        <pre class="mt-4"><?php echo $letra; ?></pre>
+    </div>
+<?php 
+} else {
+    echo "No se pudo acceder a la propiedad del arreglo";
+}
