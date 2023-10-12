@@ -16,43 +16,38 @@
                     <?php
                     if ($id_editar == $cancion->id_cancion) { ?>
                         <form action="updateCancion/<?= $cancion->id_cancion ?>" method="POST">
-                            <div class="row">
-                                <div class="col-9">
-                                    <div class="form-group">
-                                        <input required name="titulo" type="text" value="<?php echo $cancion->titulo ?>" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input required name="artista" type="text" value="<?php echo $cancion->artista ?>" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input required name="duracion" type="text" value="<?php echo $cancion->duracion ?>" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Guardar cambio</button>
+                                <input required name="titulo" type="text" value="<?php echo $cancion->titulo ?>" class="form-control">
+                            <td>       
+                                <input required name="artista" type="text" value="<?php echo $cancion->artista ?>" class="form-control">
+                            </td> 
+                            <td>        
+                                <input required name="duracion" type="text" value="<?php echo $cancion->duracion ?>" class="form-control">
+                            </td>
+                            <td>       
+                                <button type="submit" class="btn btn-primary">Guardar cambio</button>
+                            </td>    
                         </form>
                     <?php
-                    } else {
-                    ?>
-                        <div class="">
-                            <div class="">
-                                <?php echo $cancion->titulo ?>
-                            </div>
-                            <div class="">
-                                <?php echo $cancion->artista ?>
-                            </div>
-                            <div class="">
-                                <?php echo $cancion->duracion ?>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
+                    } else { echo $cancion->titulo; } ?>
                 </td>
                 <td>
+                    <?php 
+                    if ($id_editar == $cancion->id_cancion) {
+                    } else {  echo $cancion->artista;
+                    } ?>
+                </td>
+                <td>
+                    <?php 
+                    if ($id_editar == $cancion->id_cancion) {
+                    } else { echo $cancion->duracion;
+                    } ?>
+                </td>
+                <td>
+                    <?php if ($id_editar != $cancion->id_cancion) { ?>
                     <a href="verLetra/<?= $cancion->id_cancion ?>" type="button" class='btn btn-primary'>Ver letra</a>
                     <a href="editarCancion/<?= $cancion->id_cancion ?>" type="button" class='btn btn-success ml-auto'>Editar</a>
                     <a href="eliminarCancion/<?= $cancion->id_cancion ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
+                    <?php } ?>
                 </td>
             </tr>
         <?php } ?>

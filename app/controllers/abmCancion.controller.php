@@ -81,7 +81,7 @@ class AbmCancionController {
 
             if (isset($letra) && !empty($letra)) {
                 // $this->view->showError("Debe completar todos los campos");
-                $this->model->updateCancion($id, $letra);
+                $this->model->updateLetra($id, $letra);
                 header('Location: ' . BASE_URL . 'verLetra/' . $id);
             } else {
                 echo "error";

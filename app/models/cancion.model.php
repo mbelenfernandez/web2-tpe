@@ -45,7 +45,12 @@ class CancionModel{
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    function updateCancion($id, $letra) {
+    function updateCancion($id, $titulo, $artista, $duracion) {
+        $query = $this->db->prepare('UPDATE cancion SET titulo=?, artista=?, duracion=? WHERE id_cancion=?');
+        $query->execute([$titulo, $artista, $duracion, $id]);
+    }
+
+    function updateLetra($id, $letra) {
         $query = $this->db->prepare('UPDATE cancion SET letra=? WHERE id_cancion=?');
         $query->execute([$letra, $id]);
     }
