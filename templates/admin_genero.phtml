@@ -14,15 +14,11 @@
                 <td>
                     <?php
                     if ($id_editar == $genero->id_genero) { ?>
-                        <form action="updateGenero/<?= $genero->id_genero ?>" method="POST">
-                            <div class="row">
-                                <div class="col-9">
-                                            <div>
-                                                <input required name="descripcion" type="text" value="<?php echo $genero->descripcion ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                            <button type="submit" class="btn btn-primary">Guardar cambio</button>
+                        <form action="updateGenero/<?= $genero->id_genero ?>" method="POST">                            
+                            <input required name="descripcion" type="text" value="<?php echo $genero->descripcion ?>">
+                            <th>                
+                                <button type="submit" class="btn btn-primary">Guardar cambio</button>
+                            </th>    
                         </form>
                     <?php
                     } else {
@@ -33,8 +29,10 @@
                     ?>
                 </td>
                 <td>
-                    <a href="editarGenero/<?= $genero->id_genero ?>" class="btn btn-success">Editar</a>
-                    <a href="eliminarGenero/<?= $genero->id_genero ?>" class="btn btn-danger">Borrar</a>
+                    <?php if ($id_editar != $genero->id_genero) { ?>
+                        <a href="editarGenero/<?= $genero->id_genero ?>" class="btn btn-success">Editar</a>
+                        <a href="eliminarGenero/<?= $genero->id_genero ?>" class="btn btn-danger">Borrar</a>
+                    <?php } ?>
                 </td>
             </tr>
         <?php } ?>
