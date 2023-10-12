@@ -28,9 +28,6 @@
                             <a class="nav-link" aria-current="page" href="canciones">Canciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="cancion">Cancion</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="abmGenero">ABM género</a>
                         </li> 
                         <li class="nav-item">

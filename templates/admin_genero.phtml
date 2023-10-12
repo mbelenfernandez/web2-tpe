@@ -1,48 +1,46 @@
         <h3>Listado de géneros</h3>
-        <table>
-            <thead>
-                <th> Id
-                </th>
-                <th> Descripción
-                </th>
-                <th> Acción
-                </th>
-            </thead>
-            <tbody>
-                <?php foreach ($generos as $genero) { ?>
-                    <tr>
-                        <td>
-                            <?php echo $genero->id_genero ?>
-                        </td>
-                        <td>
-                            <?php
-                            if ($id_editar == $genero->id_genero) { ?>
-                                <form action="updateGenero/<?= $genero->id_genero ?>" method="POST">
-                                    <div class="row">
-                                        <div class="col-9">
+        <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Descripción</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($generos as $genero) { ?>
+            <tr>
+                <td><?php echo $genero->id_genero ?></td>
+                <td>
+                    <?php
+                    if ($id_editar == $genero->id_genero) { ?>
+                        <form action="updateGenero/<?= $genero->id_genero ?>" method="POST">
+                            <div class="row">
+                                <div class="col-9">
                                             <div>
-                                                <label for="descripcion">Descripción</label>
                                                 <input required name="descripcion" type="text" value="<?php echo $genero->descripcion ?>">
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit">Guardar</button>
-                                </form>
-                            <?php
-                            } else {
-                            ?>
-                            <?php echo $genero->descripcion;
-                            }
-                            ?>
-                        </td>
-                        <td>
-                            <a href="editarGenero/<?= $genero->id_genero ?>" type="button" class='btn btn-success ml-auto'>Editar</a>
-                            <a href="eliminarGenero/<?= $genero->id_genero ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
-                        </td>
-                    </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+                            <button type="submit" class="btn btn-primary">Guardar cambio</button>
+                        </form>
+                    <?php
+                    } else {
+                    ?>
+                    <?php echo $genero->descripcion; ?>
+                    <?php
+                    }
+                    ?>
+                </td>
+                <td>
+                    <a href="editarGenero/<?= $genero->id_genero ?>" class="btn btn-success">Editar</a>
+                    <a href="eliminarGenero/<?= $genero->id_genero ?>" class="btn btn-danger">Borrar</a>
+                </td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
+
         <div>
             <h3>Agregar nuevo género</h3>
             <?php require_once 'templates/form_genero.phtml'; ?>

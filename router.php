@@ -24,7 +24,7 @@ $controllerGenero = new GeneroController();
 $controllerCancion = new CancionController();
 $controllerAbmGenero = new AbmGeneroController();
 $controllerAbmCancion = new AbmCancionController();
-$controllerAuth= new AuthController();
+$controllerAuth = new AuthController();
 
 // parsea la accion para separar accion real de parametros
 $params = explode('/', $action);
@@ -60,24 +60,39 @@ switch ($params[0]) {
     case 'editarGenero':
         $controllerAbmGenero->editGenero($params[1]);
         break;
+    case 'editarCancion':
+        $controllerAbmCancion->editCancion($params[1]);
+        break;
+    case 'modificarLetra':
+        $controllerAbmCancion->editLetra($params[1]);
+        break;
+    case 'verLetra':
+        $controllerAbmCancion->verLetra($params[1]);
+        break;
     case 'updateGenero':
         $controllerAbmGenero->updateGenero($params[1]);
+        break;
+    case 'updateCancion':
+        $controllerAbmCancion->updateCancion($params[1]);
+        break;
+    case 'updateLetra':
+        $controllerAbmCancion->updateLetra($params[1]);
         break;
     case 'filtroCanciones':
         $controllerCancion->filtroCanciones($params[1]);
         break;
     case 'login':
-        $controllerAuth->showLogin(); 
+        $controllerAuth->showLogin();
         break;
     case 'auth':
         $controllerAuth->auth();
         break;
     case 'logout':
         $controllerAuth->logout();
-        break;  
+        break;
     case 'contenido':
         $controllerCancion->showCancion($params[1]);
-        break; 
+        break;
     default:
         echo "404 Page Not Found";
         break;

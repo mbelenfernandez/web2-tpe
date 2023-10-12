@@ -1,0 +1,53 @@
+<?php
+if (isset($cancion[0]) && isset($cancion[0]->titulo)) {
+    $titulo = $cancion[0]->titulo;
+    $artista = $cancion[0]->artista;
+    $duracion = $cancion[0]->duracion;
+    $letra = $cancion[0]->letra;
+    $genero = $cancion[0]->descripcion;
+?>
+    <div class="container mt-4">
+        <h1 class="display-4"><?php echo $genero; ?></h1>
+        <h2><?php echo $titulo; ?> - <?php echo $artista; ?></h2>
+        <h6><?php echo "Duración: " . $duracion . " minutos"; ?></h6>
+        <pre class="mt-4"><?php echo $letra; ?></pre>
+    </div>
+    <div class="container mt-4">
+        <tbody>
+            <?php foreach ($cancion as $cancion) { ?>
+                <tr>
+                    <td>
+                        <?php
+                        if ($id_editar == $cancion->id_cancion) { ?>
+                            <form action="updateLetra/<?= $cancion->id_cancion ?>" method="POST">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <div class="form-group">
+                                            <h1>Editar letra</h1>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea name="letra" class="mt-4" rows="50" cols="70"><?php echo $cancion->letra ?></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Guardar cambio</button>
+                            </form>
+                        <?php
+                        } else {
+                        ?>
+                    <td>
+                        <a href="modificarLetra/<?= $cancion->id_cancion ?>" type="button" class='btn btn-success ml-auto'>Editar</a>
+                    </td>
+                <?php
+                        }
+                ?>
+                </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+        </table>
+    </div>
+<?php
+} else {
+    echo "No se pudo acceder a la propiedad del arreglo";
+}

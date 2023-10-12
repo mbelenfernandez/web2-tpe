@@ -44,4 +44,9 @@ class CancionModel{
         $query->execute([$id_genero]);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+
+    function updateCancion($id, $letra) {
+        $query = $this->db->prepare('UPDATE cancion SET letra=? WHERE id_cancion=?');
+        $query->execute([$letra, $id]);
+    }
 }

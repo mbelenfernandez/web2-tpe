@@ -43,4 +43,49 @@ class AbmCancionController {
         $this->model->deleteCancion($id);
         header('Location: ' . BASE_URL);
     }
+
+    function editCancion($id){
+        $canciones = $this->model->getCanciones();
+        $this->view->listarCanciones($canciones, $id);
+    }
+
+    function editLetra($id){
+        $canciones = $this->model->getCanciones();
+        $this->view->editarLetra($canciones, $id);
+    }
+
+    function verLetra($id){
+        $cancion = $this->model->getCancionById($id);
+        $this->view->listarLetra($cancion, $id);
+    }
+
+    function updateCancion($id){
+        if ($_POST) {
+            $titulo = $_POST['titulo'];
+            $artista = $_POST['artista'];
+            $duracion = $_POST['duracion'];
+
+            if ((isset($titulo) && !empty($titulo)) && (isset($artista) && !empty($artista)) && (isset($duracion) && !empty($duracion))) {
+                // $this->view->showError("Debe completar todos los campos");
+                $this->model->updateCancion($id, $titulo, $artista, $duracion);
+                header('Location: ' . BASE_URL . 'abmCancion');
+            } else {
+                echo "error";
+            }
+        }
+    }
+
+    function updateLetra($id){
+        if ($_POST) {
+            $letra = $_POST['letra'];
+
+            if (isset($letra) && !empty($letra)) {
+                // $this->view->showError("Debe completar todos los campos");
+                $this->model->updateCancion($id, $letra);
+                header('Location: ' . BASE_URL . 'verLetra/' . $id);
+            } else {
+                echo "error";
+            }
+        }
+    }
 }
