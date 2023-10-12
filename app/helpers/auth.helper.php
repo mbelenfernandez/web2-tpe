@@ -5,12 +5,13 @@ class AuthHelper {
     public static function init() {
         if (session_status() != PHP_SESSION_ACTIVE) {
             session_start();
+            AuthHelper::init();
         }
     }
 
     public static function login($user) {
         AuthHelper::init();
-        $_SESSION['USER_ID'] = $user->id;
+        $_SESSION['USER_ID'] = $user->id_usuario;
         $_SESSION['USER_USERNAME'] = $user->username; 
     }
 
@@ -22,7 +23,7 @@ class AuthHelper {
     public static function verify() {
         AuthHelper::init();
         if (!isset($_SESSION['USER_ID'])) {
-            header('Location: ' . BASE_URL . '/login');
+            header('Location: ' . BASE_URL . 'login');
             die();
         }
     }
