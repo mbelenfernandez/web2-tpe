@@ -1,33 +1,37 @@
 <form action="agregarCancion" method="POST">
-    <div>
-        <h3>Agregar nueva canción</h3>
+    <div class="container">
+        <h3 class="mt-4">Agregar nueva canción</h3>
     </div>
-    <div class="row">
-        <div class="col-9">
-            <div>
-                <label for="titulo">Título</label>
-                <input required name="titulo" type="text">
-            </div>
-            <div>
-                <label for="artista">Artista</label>
-                <input required name="artista" type="text">
-            </div>
-            <div>
-                <label for="duracion">Duración</label>
-                <input required name="duracion" type="text">
-            </div>
-            <div>
-                <label for="letra">Letra</label>
-                <input required name="letra" type="text">
-            </div>
-            <div>
-                <label for="id_genero">Género</label>
-                <select name="id_genero" id="id_genero">
-                    <option value="seleccionar">Seleccionar...</option>
-                    <option value="1">1</option>
-                </select>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input required name="titulo" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="artista">Artista</label>
+                    <input required name="artista" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="duracion">Duración</label>
+                    <input required name="duracion" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="letra">Letra</label>
+                    <input required name="letra" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="id_genero">Género</label>
+                    <select name="id_genero" id="id_genero" class="form-control">
+                        <option value="seleccionar">Seleccionar...</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
             </div>
         </div>
+        <div class="container">
+            <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+        </div>
     </div>
-    <button type="submit">Guardar</button>
 </form>
