@@ -27,9 +27,8 @@ class AuthController {
 
         $user = $this->model->getByUsername($username);
         if ($user && password_verify($password, $user->password)) {
-            
             AuthHelper::login($user);
-            header('Location: ' . BASE_URL);
+            //header('Location: ' . BASE_URL . 'abmGenero');
         } else {
             $this->view->showLogin('Usuario o contraseña incorrectos');
         }

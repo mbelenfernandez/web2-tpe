@@ -11,14 +11,8 @@ class CancionController {
        $this->view = new CancionView(); 
     }
 
-    function showCanciones($filtro = null){
+    function showCanciones(){
         $canciones = $this->model->getCanciones();
-
-        if($filtro){
-            $canciones = [];
-            $canciones = $filtro;
-        }
-
         $this->view->showCanciones($canciones);
     }
 
@@ -27,8 +21,8 @@ class CancionController {
         $this->view->showCancion($cancion);
     }
 
-    function filtroCanciones($id){
-        $canciones = $this->model->filtroPorCancion($id);
-        $this->showCanciones($canciones);
+    function filtroCanciones($id_genero){
+        $canciones = $this->model->filtroPorCancion($id_genero);
+        $this->view->showCanciones($canciones);
     }
 }
