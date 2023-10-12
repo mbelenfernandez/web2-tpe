@@ -2,7 +2,7 @@
     <?php foreach ($canciones as $cancion) { ?>
         <li class="list-group-item">
             <div>
-                <a href="#" class="text-decoration-none text-dark"><b><?php echo $cancion->titulo ?> - <?php echo $cancion->artista ?></b></a>
+                <a href="contenido/<?php echo $cancion->id_cancion ?>" class="text-decoration-none text-dark"><b><?php echo $cancion->titulo ?> - <?php echo $cancion->artista ?></b></a>
             </div>
         </li>
     <?php } ?>

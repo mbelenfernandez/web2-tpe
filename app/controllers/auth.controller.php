@@ -7,7 +7,7 @@ class AuthController {
     private $view;
     private $model;
 
-    function __construct() {
+    public function __construct() {
         $this->model = new UserModel();
         $this->view = new AuthView();
     }

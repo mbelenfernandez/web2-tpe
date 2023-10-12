@@ -74,7 +74,10 @@ switch ($params[0]) {
         break;
     case 'logout':
         $controllerAuth->logout();
-        break;   
+        break;  
+    case 'contenido':
+        $controllerCancion->showCancion($params[1]);
+        break; 
     default:
         echo "404 Page Not Found";
         break;
