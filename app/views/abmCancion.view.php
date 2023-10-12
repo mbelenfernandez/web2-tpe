@@ -13,7 +13,7 @@ class AbmCancionView
     function listarLetra($cancion, $id_editar = null)
     {
         require_once 'templates/header.php';
-        require_once 'templates/editar_letra.phtml';
+        require_once 'templates/ver_letra.phtml';
         require_once 'templates/footer.php';
     }
 

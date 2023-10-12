@@ -1,20 +1,6 @@
-<?php
-if (isset($cancion[0]) && isset($cancion[0]->titulo)) {
-    $titulo = $cancion[0]->titulo;
-    $artista = $cancion[0]->artista;
-    $duracion = $cancion[0]->duracion;
-    $letra = $cancion[0]->letra;
-    $genero = $cancion[0]->descripcion;
-?>
-    <div class="container mt-4">
-        <h1 class="display-4"><?php echo $genero; ?></h1>
-        <h2><?php echo $titulo; ?> - <?php echo $artista; ?></h2>
-        <h6><?php echo "Duración: " . $duracion . " minutos"; ?></h6>
-        <pre class="mt-4"><?php echo $letra; ?></pre>
-    </div>
-    <div class="container mt-4">
+<div class="container mt-4">
         <tbody>
-            <?php foreach ($cancion as $cancion) { ?>
+            <?php foreach ($canciones as $cancion) { ?>
                 <tr>
                     <td>
                         <?php
@@ -31,23 +17,27 @@ if (isset($cancion[0]) && isset($cancion[0]->titulo)) {
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Guardar cambio</button>
+                                <a href="volverAbmCancion" type="button" class="btn btn-secondary ml-auto">Volver</a>
                             </form>
                         <?php
                         } else {
                         ?>
                     <td>
-                        <a href="modificarLetra/<?= $cancion->id_cancion ?>" type="button" class='btn btn-success ml-auto'>Editar</a>
+                        
                     </td>
                 <?php
                         }
                 ?>
                 </td>
                 </tr>
-            <?php } ?>
+            <?php
+            } 
+            ?>
         </tbody>
         </table>
     </div>
 <?php
-} else {
-    echo "No se pudo acceder a la propiedad del arreglo";
-}
+
+//} else {
+    //echo "No se pudo acceder a la propiedad del arreglo";
+//}

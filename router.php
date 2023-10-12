@@ -93,6 +93,12 @@ switch ($params[0]) {
     case 'contenido':
         $controllerCancion->showCancion($params[1]);
         break;
+    case 'volverAbmCancion':
+        $controllerAbmCancion->volver();
+        break;
+    case 'volverAbmGenero':
+        $controllerAbmGenero->volver();
+        break;
     default:
         echo "404 Page Not Found";
         break;

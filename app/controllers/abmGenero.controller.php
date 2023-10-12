@@ -60,4 +60,8 @@ class AbmGeneroController
             }
         }
     }
+
+    function volver (){
+        header('Location: ' . BASE_URL . 'abmGenero');
+    }
 }

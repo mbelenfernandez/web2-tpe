@@ -88,4 +88,8 @@ class AbmCancionController {
             }
         }
     }
+
+    function volver (){
+        header('Location: ' . BASE_URL . 'abmCancion');
+    }
 }
