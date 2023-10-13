@@ -1,45 +1,44 @@
-        <h3>Listado de géneros</h3>
-        <table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Descripción</th>
-            <th>Acción</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($generos as $genero) { ?>
+<div class="container">
+    <h3>Listado de géneros</h3>
+    <table class="table table-striped">
+        <thead class="thead-dark">
             <tr>
-                <td><?php echo $genero->id_genero ?></td>
-                <td>
-                    <?php
-                    if ($id_editar == $genero->id_genero) { ?>
-                        <form action="updateGenero/<?= $genero->id_genero ?>" method="POST">                            
-                            <input required name="descripcion" type="text" value="<?php echo $genero->descripcion ?>">
-                            <th>                
-                                <button type="submit" class="btn btn-primary">Guardar cambio</button>
-                                <a href="volverAbmGenero" type="button" class="btn btn-secondary ml-auto">Volver</a>
-                            </th>    
-                        </form>
-                    <?php
-                    } else {
-                    ?>
-                    <?php echo $genero->descripcion; ?>
-                    <?php
-                    }
-                    ?>
-                </td>
-                <td>
-                    <?php if ($id_editar != $genero->id_genero) { ?>
-                        <a href="editarGenero/<?= $genero->id_genero ?>" class="btn btn-success">Editar</a>
-                        <a href="eliminarGenero/<?= $genero->id_genero ?>" class="btn btn-danger">Borrar</a>
-                    <?php } ?>
-                </td>
+                <th>Id</th>
+                <th>Descripción</th>
+                <th>Acción</th>
             </tr>
-        <?php } ?>
-    </tbody>
-</table>
-    <div>
+        </thead>
+        <tbody>
+            <?php foreach ($generos as $genero) { ?>
+                <tr>
+                    <td><?php echo $genero->id_genero ?></td>
+                    <td>
+                        <?php if ($id_editar == $genero->id_genero) { ?>
+                            <form action="updateGenero/<?= $genero->id_genero ?>" method="POST">
+                                <div class="input-group">
+                                    <input required name="descripcion" type="text" class="form-control" value="<?php echo $genero->descripcion ?>">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-primary">Guardar cambio</button>
+                                    </div>
+                                </div>
+                                <a href="volverAbmGenero" type="button" class="btn btn-secondary mt-2">Volver</a>
+                            </form>
+                        <?php } else { ?>
+                            <?php echo $genero->descripcion; ?>
+                        <?php } ?>
+                    </td>
+                    <td>
+                        <?php if ($id_editar != $genero->id_genero) { ?>
+                            <a href="editarGenero/<?= $genero->id_genero ?>" class="btn btn-success">Editar</a>
+                            <a href="eliminarGenero/<?= $genero->id_genero ?>" class="btn btn-danger">Borrar</a>
+                        <?php } ?>
+                    </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+    <div class="mt-4">
         <h3>Agregar nuevo género</h3>
-        <?php require_once 'templates/form_genero.phtml'; ?>
+            <?php require_once 'templates/form_genero.phtml'; ?>
     </div>
+</div>

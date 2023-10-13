@@ -50,7 +50,8 @@ class AbmCancionController {
 
     function editCancion($id){
         $canciones = $this->model->getCanciones();
-        $this->view->listarCanciones($canciones, $id);
+        $generos = $this->modelGenero->getGeneros();
+        $this->view->listarCanciones($canciones, $generos, $id);
     }
 
     function editLetra($id){
