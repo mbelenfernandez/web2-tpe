@@ -35,10 +35,7 @@
                         </li>                         
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="login">Login</a>
-                        </li> 
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="logout">Logout</a>
-                        </li>                          
+                        </li>                         
                     </ul>
                 </div>
             </div>

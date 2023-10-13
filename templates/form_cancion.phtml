@@ -19,13 +19,16 @@
                 </div>
                 <div class="form-group">
                     <label for="letra">Letra</label>
-                    <input required name="letra" type="text" class="form-control">
+                    <textarea name="letra" class="form-control mt-4" rows="10" cols="70"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="id_genero">Género</label>
                     <select name="id_genero" id="id_genero" class="form-control">
                         <option value="seleccionar">Seleccionar...</option>
-                        <option value="1">1</option>
+                        <?php 
+                        foreach ($generos as $genero) { ?>
+                            <option value="<?php echo $genero->id_genero?>"><?php echo $genero->descripcion ?></option>
+                        <?php } ?>
                     </select>
                 </div>
             </div>
