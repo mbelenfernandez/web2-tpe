@@ -1,6 +1,7 @@
 <?php
 require_once './app/views/abmCancion.view.php';
 require_once './app/models/cancion.model.php';
+require_once './app/helpers/auth.helper.php';
 
 class AbmCancionController {
     private $model;

@@ -1,6 +1,7 @@
 <?php
 require_once './app/views/abmGenero.view.php';
 require_once './app/models/genero.model.php';
+require_once './app/helpers/auth.helper.php';
 
 class AbmGeneroController
 {
