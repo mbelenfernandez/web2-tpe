@@ -1,10 +1,10 @@
 <div class="container mt-4">
+    <table class="table table-striped">
         <tbody>
             <?php foreach ($canciones as $cancion) { ?>
                 <tr>
                     <td>
-                        <?php
-                        if ($id_editar == $cancion->id_cancion) { ?>
+                        <?php if ($id_editar == $cancion->id_cancion) { ?>
                             <form action="updateLetra/<?= $cancion->id_cancion ?>" method="POST">
                                 <div class="row">
                                     <div class="col-9">
@@ -12,32 +12,19 @@
                                             <h1>Editar letra</h1>
                                         </div>
                                         <div class="form-group">
-                                            <textarea name="letra" class="mt-4" rows="50" cols="70"><?php echo $cancion->letra ?></textarea>
+                                            <textarea name="letra" class="form-control" rows="10" cols="70"><?php echo $cancion->letra ?></textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Guardar cambio</button>
-                                <a href="volverAbmCancion" type="button" class="btn btn-secondary ml-auto">Volver</a>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Guardar cambio</button>
+                                    <a href="volverAbmCancion" class="btn btn-secondary ml-2">Volver</a>
+                                </div>
                             </form>
-                        <?php
-                        } else {
-                        ?>
-                    <td>
-                        
+                        <?php } ?>
                     </td>
-                <?php
-                        }
-                ?>
-                </td>
                 </tr>
-            <?php
-            } 
-            ?>
+            <?php } ?>
         </tbody>
-        </table>
-    </div>
-<?php
-
-//} else {
-    //echo "No se pudo acceder a la propiedad del arreglo";
-//}
+    </table>
+</div>

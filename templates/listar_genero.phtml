@@ -1,10 +1,10 @@
 <ul class="list-group">
     <?php foreach ($generos as $genero) { ?>
         <li class="list-group-item">
-            <b><a href="filtroCanciones/<?php echo $genero->id_genero ?>"><?php echo $genero->descripcion ?></a>
+            <b><a href="filtroCanciones/<?php echo $genero->id_genero ?>" class="text-decoration-none text-dark"><?php echo $genero->descripcion ?></a></b>
         </li>
     <?php } ?>
     <li class="list-group-item">
-        <a href="canciones">Todos</a>
+        <a href="canciones" class="text-decoration-none text-dark">Todos</a>
     </li>
 </ul>
