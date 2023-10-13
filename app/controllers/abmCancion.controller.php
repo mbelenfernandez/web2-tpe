@@ -23,7 +23,7 @@ class AbmCancionController {
 
     public function addCancion()
     {
-        $generos = $this->modelGenero->getGeneros();
+        $generos = $this->modelGenero->getGeneros(); //esta alpedo
         $titulo = $_POST['titulo'];
         $artista = $_POST['artista'];
         $duracion = $_POST['duracion'];
@@ -45,7 +45,7 @@ class AbmCancionController {
 
     function  removeCanciones ($id){
         $this->model->deleteCancion($id);
-        header('Location: ' . BASE_URL);
+        header('Location: ' . BASE_URL . 'abmCancion');
     }
 
     function editCancion($id){

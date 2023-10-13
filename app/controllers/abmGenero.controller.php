@@ -32,7 +32,7 @@ class AbmGeneroController
 
         $id = $this->model->insertGenero($descripcion);
         if ($id) {
-            header('Location: ' . BASE_URL);
+            header('Location: ' . BASE_URL . 'abmGenero');
         } else {
             echo "Error insertando género";
         }
@@ -40,7 +40,7 @@ class AbmGeneroController
 
     function  removeGeneros ($id){
         $this->model->deleteGenero($id);
-        header('Location: ' . BASE_URL);
+        header('Location: ' . BASE_URL . 'abmGenero');
     }
 
     function editGenero($id){
