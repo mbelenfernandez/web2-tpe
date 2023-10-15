@@ -2,7 +2,7 @@
 
 class CancionView
 {
-    function showCanciones($canciones)
+    function showCanciones($canciones, $genero =null)
     {
         require_once 'templates/header.php';
         require_once 'templates/listar_canciones.phtml';

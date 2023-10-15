@@ -1,4 +1,6 @@
-<h1>Género:</h1>
+<?php foreach ($genero as $genero) { ?>
+    <h1> <?= $genero->descripcion ?> </h1>
+<?php } ?>
 <ul class="list-group">
     <?php foreach ($canciones as $cancion) { ?>
         <li class="list-group-item">

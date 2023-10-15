@@ -19,6 +19,15 @@ class GeneroModel{
         return $generos;
     }
 
+    function getGenero($id) {
+        $query = $this->db->prepare('SELECT * FROM genero WHERE id_genero=?');
+        $query->execute([$id]);
+    
+        $genero = $query->fetchAll(PDO::FETCH_OBJ);
+    
+        return $genero;
+    }
+
     function insertGenero($descripcion) {
         $query = $this->db->prepare('INSERT INTO genero (descripcion) VALUES(?)');
         $query->execute([$descripcion]);
