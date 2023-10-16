@@ -1,4 +1,6 @@
 <?php
+require_once 'templates/show_error.phtml';
+
 if (isset($cancion[0]) && isset($cancion[0]->titulo)) {
     $titulo = $cancion[0]->titulo;
     $artista = $cancion[0]->artista;
@@ -13,22 +15,14 @@ if (isset($cancion[0]) && isset($cancion[0]->titulo)) {
         <pre class="mt-4"><?= $letra; ?></pre>
     </div>
     <div class="container mt-4">
-        
             <?php foreach ($cancion as $cancion) { ?>
-                
-                        <?php
-                        if ($id_editar == $cancion->id_cancion) { ?>
+                        <?php if ($id_editar == $cancion->id_cancion) { ?>
                             <a href="modificarLetra/<?= $cancion->id_cancion ?>" type="button" class='btn btn-success ml-auto'>Editar</a>
                             <a href="volverAbmCancion" type="button" class="btn btn-secondary ml-auto">Volver</a> 
-                        <?php
-                        } 
-                        ?>
-                
-            <?php } ?>
-        
-        
+                        <?php } ?>
+              <?php } ?>
     </div>
 <?php
 } else {
-    echo "No se pudo acceder a la propiedad del arreglo";
+    showError("No se pudo acceder a la propiedad del arreglo");
 }

@@ -56,7 +56,7 @@ class AbmCancionController {
 
     function editLetra($id){
         $canciones = $this->model->getCanciones();
-        $this->view->editarLetra($canciones, $id);
+        $this->view->editarLetra($canciones, $id, "No se pudo acceder a la propiedad del arreglo");
     }
 
     function verLetra($id){
