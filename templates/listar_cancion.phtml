@@ -7,10 +7,10 @@ if (isset($cancion[0]) && isset($cancion[0]->titulo)) {
     $genero = $cancion[0]->descripcion;
 ?>
 <div class="container mt-4">
-    <h1 class="display-4"><?php echo $genero; ?></h1>
-    <h2><?php echo $titulo; ?> - <?php echo $artista; ?></h2>
-    <h6><?php echo "Duración: " . $duracion . " minutos"; ?></h6>
-    <pre class="mt-4"><?php echo $letra; ?></pre>
+    <h1 class="display-4"><?= $genero; ?></h1>
+    <h2><?= $titulo; ?> - <?= $artista; ?></h2>
+    <h6><?= "Duración: " . $duracion . " minutos"; ?></h6>
+    <pre class="mt-4"><?= $letra; ?></pre>
 </div>
 <?php 
 } else {

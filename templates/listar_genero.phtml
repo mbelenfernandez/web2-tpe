@@ -1,7 +1,7 @@
 <ul class="list-group">
     <?php foreach ($generos as $genero) { ?>
         <li class="list-group-item">
-            <a href="filtroCanciones/<?php echo $genero->id_genero ?>" class="text-decoration-none text-dark"><?php echo $genero->descripcion ?></a>
+            <a href="filtroCanciones/<?= $genero->id_genero ?>" class="text-decoration-none text-dark"><?= $genero->descripcion ?></a>
         </li>
     <?php } ?>
     <li class="list-group-item">

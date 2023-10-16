@@ -10,7 +10,7 @@
                     <input required name="titulo" type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for "artista">Artista</label>
+                    <label for="artista">Artista</label>
                     <input required name="artista" type="text" class="form-control">
                 </div>
                 <div class="form-group">
@@ -26,7 +26,7 @@
                     <select name="id_genero" id="id_genero" class="form-control">
                         <?php 
                         foreach ($generos as $genero) { ?>
-                            <option value="<?php echo $genero->id_genero?>"><?php echo $genero->descripcion ?></option>
+                            <option value="<?= $genero->id_genero?>"><?= $genero->descripcion ?></option>
                         <?php } ?>
                     </select>
                 </div>

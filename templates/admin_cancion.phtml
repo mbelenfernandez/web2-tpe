@@ -13,22 +13,22 @@
         <tbody>
             <?php foreach ($canciones as $cancion) { ?>
                 <tr>
-                    <td><?php echo $cancion->id_cancion ?></td>
+                    <td> <?= $cancion->id_cancion ?></td>
                     <td>
                         <?php if ($id_editar == $cancion->id_cancion) { ?>
                             <form action="updateCancion/<?= $cancion->id_cancion ?>" method="POST">
-                                <td> <input required name="titulo" type="text" value="<?php echo $cancion->titulo ?>" class="form-control"> </td>
-                                <td> <input required name="artista" type="text" value="<?php echo $cancion->artista ?>" class="form-control"> </td>
-                                <td> <input required name="duracion" type="text" value="<?php echo $cancion->duracion ?>" class="form-control"> </td>
+                                <td> <input required name="titulo" type="text" value="<?= $cancion->titulo ?>" class="form-control"> </td>
+                                <td> <input required name="artista" type="text" value="<?= $cancion->artista ?>" class="form-control"> </td>
+                                <td> <input required name="duracion" type="text" value="<?= $cancion->duracion ?>" class="form-control"> </td>
                                 <td>
                                     <button type="submit" class="btn btn-primary">Guardar</button>
                                     <a href="volverAbmCancion" type="button" class="btn btn-secondary">Cancelar</a>
                                 </td>
                             </form>
                         <?php } else { 
-                                    ?> <td> <?php echo $cancion->titulo; ?> </td>
-                                    <td> <?php echo $cancion->artista; ?> </td>
-                                    <td> <?php echo $cancion->duracion; ?> </td> <?php
+                                    ?> <td> <?= $cancion->titulo; ?> </td>
+                                    <td> <?= $cancion->artista; ?> </td>
+                                    <td> <?= $cancion->duracion; ?> </td> <?php
                                 } ?>
                     </td>
                     <td>

@@ -11,12 +11,12 @@
         <tbody>
             <?php foreach ($generos as $genero) { ?>
                 <tr>
-                    <td><?php echo $genero->id_genero ?></td>
+                    <td> <?= $genero->id_genero ?></td>
                     <td>
                         <?php if ($id_editar == $genero->id_genero) { ?>
                             <form action="updateGenero/<?= $genero->id_genero ?>" method="POST">
                                 <div class="input-group">
-                                    <input required name="descripcion" type="text" class="form-control" value="<?php echo $genero->descripcion ?>">
+                                    <input required name="descripcion" type="text" class="form-control" value="<?= $genero->descripcion ?>">
                                     <div class="input-group-append">
                                         <button type="submit" class="btn btn-primary">Guardar</button>
                                     </div>
@@ -24,7 +24,7 @@
                                 <a href="volverAbmGenero" type="button" class="btn btn-secondary">Cancelar</a>
                             </form>
                         <?php } else { ?>
-                            <?php echo $genero->descripcion; ?>
+                            <?= $genero->descripcion; ?>
                         <?php } ?>
                     </td>
                     <td>

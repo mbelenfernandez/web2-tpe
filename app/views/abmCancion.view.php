@@ -5,7 +5,7 @@ class AbmCancionView
     function listarCanciones($canciones, $generos, $id_editar = null)
     {
         require_once 'templates/headerAbm.php';
-        require_once 'templates/Cancion_Completa.phtml';
+        require_once 'templates/admin_cancion.phtml';
         require_once 'templates/form_cancion.phtml';
         require_once 'templates/footer.php';
     }

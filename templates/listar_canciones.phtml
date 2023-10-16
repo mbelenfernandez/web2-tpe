@@ -5,8 +5,8 @@
     <?php foreach ($canciones as $cancion) { ?>
         <li class="list-group-item">
             <div>
-                <a href="contenido/<?php echo $cancion->id_cancion ?>" class="text-decoration-none text-dark">
-                    <b><?php echo $cancion->titulo ?> - <?php echo $cancion->artista ?></b>
+                <a href="contenido/<?= $cancion->id_cancion ?>" class="text-decoration-none text-dark">
+                    <b><?= $cancion->titulo ?> - <?= $cancion->artista ?></b>
                 </a>
             </div>
         </li>
