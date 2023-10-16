@@ -65,7 +65,6 @@ class AbmGeneroController
             $descripcion = $_POST['descripcion'];
 
             if (isset($descripcion) && !empty($descripcion)) {
-                // $this->view->showError("Debe completar todos los campos");
                 $this->model->updateGenero($id, $descripcion);
                 header('Location: ' . BASE_URL . 'abmGenero');
             } else {

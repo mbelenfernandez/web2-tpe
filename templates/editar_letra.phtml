@@ -1,7 +1,5 @@
 <?php
 require_once 'templates/show_error.phtml';
-// Verifica si se cumple la condición deseada
-// Tu código normal aquí
 if ($canciones == true) {
     ?>
     <div class="container mt-4">
@@ -33,7 +31,6 @@ if ($canciones == true) {
     </div>
     <?php
 } else {
-    // En caso de que la condición no se cumpla, lanza un error
     showError("No se pudo acceder a la propiedad del arreglo");
 }
 ?>

@@ -31,7 +31,7 @@ class AbmCancionController {
         $id_genero = $_POST['id_genero'];
     
         if (empty($titulo) || empty($artista) || empty($duracion) || empty($letra) || empty($id_genero)) {
-            showError("Campos incompletos"); //controlar error
+            showError("Campos incompletos");
             return;
         }
     
@@ -71,7 +71,6 @@ class AbmCancionController {
             $duracion = $_POST['duracion'];
             $id_genero = $_POST['id_genero'];
             if ((isset($titulo) && !empty($titulo)) && (isset($artista) && !empty($artista)) && (isset($duracion) && !empty($duracion)) && (isset($id_genero) && !empty($id_genero))) {
-                // $this->view->showError("Debe completar todos los campos");
                 $this->model->updateCancion($id_cancion, $titulo, $artista, $duracion, $id_genero);
                 header('Location: ' . BASE_URL . 'abmCancion');
             } else {
@@ -85,7 +84,6 @@ class AbmCancionController {
             $letra = $_POST['letra'];
 
             if (isset($letra) && !empty($letra)) {
-                // $this->view->showError("Debe completar todos los campos");
                 $this->model->updateLetra($id, $letra);
                 header('Location: ' . BASE_URL . 'verLetra/' . $id);
             } else {

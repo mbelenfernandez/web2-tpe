@@ -5,4 +5,4 @@ Tema: Letras de canciones. Un repositorio de canciones con sus letras categoriza
 
 DER:
 
-![Diagrama Entidad Relación](https://github.com/mbelenfernandez/web2-tpe/blob/main/DER.png)
+![Diagrama Entidad Relación](https://github.com/mbelenfernandez/web2-tpe/blob/main/db/DER.png)
