@@ -28,11 +28,11 @@ if (!empty($_GET['action'])) {
 // updateGenero/:id     ->      AbmGeneroController->updateGenero($id);
 // updateCancion/:id    ->      AbmCancionController->updateCancion($id);
 // updateLetra/:id      ->      AbmCancionController->updateLetra($id);
-// canciones/:id  ->      CancionController->canciones($id);
+// canciones/:id        ->      CancionController->canciones($id);
 // login                ->      AuthController->showLogin();
 // auth                 ->      AuthController->auth();
 // logout               ->      AuthController->logout();
-// contenido/:id        ->      CancionController->showCancion($id);
+// cancion/:id          ->      CancionController->showCancion($id);
 // volverAbmCancion     ->      AbmCancionController->volver();
 // volverAbmGenero      ->      AbmGeneroController->volver();
 
@@ -41,19 +41,15 @@ $params = explode('/', $action);
 switch ($params[0]) {
     case 'generos':
         $controllerGenero = new GeneroController();
-        $controllerGenero->showGenero();
-        break;
-    case 'cancion':
-        $controllerCancion = new CancionController();
-        $controllerCancion->showCancion(1);
+        $controllerGenero->showGeneros();
         break;
     case 'abmGenero':
         $controllerAbmGenero = new AbmGeneroController();
-        $controllerAbmGenero->listarGeneros();
+        $controllerAbmGenero->showGeneros();
         break;
     case 'abmCancion':
         $controllerAbmCancion = new AbmCancionController();
-        $controllerAbmCancion->listarCanciones();
+        $controllerAbmCancion->showCanciones();
         break;
     case 'agregarGenero':
         $controllerAbmGenero = new AbmGeneroController();
@@ -61,11 +57,11 @@ switch ($params[0]) {
         break;
     case 'eliminarGenero':
         $controllerAbmGenero = new AbmGeneroController();
-        $controllerAbmGenero->removeGeneros($params[1]);
+        $controllerAbmGenero->removeGenero($params[1]);
         break;
     case 'eliminarCancion':
         $controllerAbmCancion = new AbmCancionController();
-        $controllerAbmCancion->removeCanciones($params[1]);
+        $controllerAbmCancion->removeCancion($params[1]);
         break;
     case 'agregarCancion':
         $controllerAbmCancion = new AbmCancionController();
@@ -85,7 +81,7 @@ switch ($params[0]) {
         break;
     case 'verLetra':
         $controllerAbmCancion = new AbmCancionController();
-        $controllerAbmCancion->verLetra($params[1]);
+        $controllerAbmCancion->showLetra($params[1]);
         break;
     case 'updateGenero':
         $controllerAbmGenero = new AbmGeneroController();
@@ -101,7 +97,7 @@ switch ($params[0]) {
         break;
     case 'canciones':
         $controllerCancion = new CancionController();
-        $controllerCancion->filtroCanciones($params[1]);
+        $controllerCancion->filterCanciones($params[1]);
         break;
     case 'login':
         $controllerAuth = new AuthController();
@@ -115,7 +111,7 @@ switch ($params[0]) {
         $controllerAuth = new AuthController();
         $controllerAuth->logout();
         break;
-    case 'contenido':
+    case 'cancion':
         $controllerCancion = new CancionController();
         $controllerCancion->showCancion($params[1]);
         break;

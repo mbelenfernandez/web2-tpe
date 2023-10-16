@@ -3,8 +3,8 @@
 class ErrorView { 
 
     public function showError($error) {
-        require 'templates/header.php';
+        require 'templates/header.phtml';
         require_once 'templates/show_error.phtml';
-        require 'templates/footer.php';
+        require 'templates/footer.phtml';
     }
 }

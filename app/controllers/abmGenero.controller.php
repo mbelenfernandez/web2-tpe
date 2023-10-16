@@ -16,10 +16,10 @@ class AbmGeneroController
         $this->model = new GeneroModel();
     }
 
-    function listarGeneros()
+    function showGeneros()
     {
         $generos = $this->model->getGeneros();
-        $this->view->listarGeneros($generos);
+        $this->view->showGeneros($generos);
     }
 
     public function addGenero()
@@ -39,7 +39,7 @@ class AbmGeneroController
         }
     }
 
-    function removeGeneros($id)
+    function removeGenero($id)
     {
         $existe = $this->model->verifyGeneroCancion($id);
 
@@ -54,7 +54,7 @@ class AbmGeneroController
     function editGenero($id)
     {
         $generos = $this->model->getGeneros();
-        $this->view->listarGeneros($generos, $id);
+        $this->view->showGeneros($generos, $id);
     }
 
     function updateGenero($id)

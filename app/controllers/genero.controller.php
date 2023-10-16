@@ -11,7 +11,7 @@ class GeneroController {
        $this->view = new GeneroView(); 
     }
 
-    function showGenero (){
+    function showGeneros (){
         $generos = $this->model->getGeneros();
         $this->view->showGenero($generos);
     }

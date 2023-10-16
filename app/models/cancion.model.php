@@ -39,7 +39,7 @@ class CancionModel{
         $query->execute([$id]);
     }
 
-    function filtroPorCancion($id_genero){
+    function getCancionByGenero($id_genero){
         $query = $this->db->prepare('SELECT id_cancion, titulo, artista FROM cancion where id_genero=?');
         $query->execute([$id_genero]);
         return $query->fetchAll(PDO::FETCH_OBJ);

@@ -2,6 +2,7 @@
 require_once './app/views/abmCancion.view.php';
 require_once './app/models/cancion.model.php';
 require_once './app/helpers/auth.helper.php';
+require_once './templates/show_error.phtml';
 
 class AbmCancionController {
     private $model;
@@ -15,15 +16,14 @@ class AbmCancionController {
        $this->modelGenero = new GeneroModel();
     }
 
-    function listarCanciones (){
+    function showCanciones (){
         $canciones = $this->model->getCanciones();
         $generos = $this->modelGenero->getGeneros();
-        $this->view->listarCanciones($canciones,$generos);
+        $this->view->showCanciones($canciones,$generos);
     }
 
     public function addCancion()
     {
-        $generos = $this->modelGenero->getGeneros(); //esta alpedo
         $titulo = $_POST['titulo'];
         $artista = $_POST['artista'];
         $duracion = $_POST['duracion'];
@@ -31,7 +31,7 @@ class AbmCancionController {
         $id_genero = $_POST['id_genero'];
     
         if (empty($titulo) || empty($artista) || empty($duracion) || empty($letra) || empty($id_genero)) {
-            echo "Campos incompletos";
+            showError("Campos incompletos"); //controlar error
             return;
         }
     
@@ -43,7 +43,7 @@ class AbmCancionController {
         }
     }    
 
-    function  removeCanciones ($id){
+    function  removeCancion ($id){
         $this->model->deleteCancion($id);
         header('Location: ' . BASE_URL . 'abmCancion');
     }
@@ -51,17 +51,17 @@ class AbmCancionController {
     function editCancion($id){
         $canciones = $this->model->getCanciones();
         $generos = $this->modelGenero->getGeneros();
-        $this->view->listarCanciones($canciones, $generos, $id);
+        $this->view->showCanciones($canciones, $generos, $id);
     }
 
     function editLetra($id){
         $canciones = $this->model->getCanciones();
-        $this->view->editarLetra($canciones, $id, "No se pudo acceder a la propiedad del arreglo");
+        $this->view->editLetra($canciones, $id, "No se pudo acceder a la propiedad del arreglo");
     }
 
-    function verLetra($id){
+    function showLetra($id){
         $cancion = $this->model->getCancionById($id);
-        $this->view->listarLetra($cancion, $id);
+        $this->view->showLetra($cancion, $id);
     }
 
     function updateCancion($id){

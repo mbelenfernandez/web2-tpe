@@ -10,7 +10,7 @@ if ($genero == "Todos") { ?>
     <?php foreach ($canciones as $cancion) { ?>
         <li class="list-group-item">
             <div>
-                <a href="contenido/<?= $cancion->id_cancion ?>" class="text-decoration-none text-dark">
+                <a href="cancion/<?= $cancion->id_cancion ?>" class="text-decoration-none text-dark">
                     <b><?= $cancion->titulo ?> - <?= $cancion->artista ?></b>
                 </a>
             </div>
