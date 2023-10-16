@@ -27,10 +27,10 @@ class CancionController
         $this->view->showCancion($cancion);
     }
 
-    function filtroCanciones($id_genero = NULL)
+    function filterCanciones($id_genero = NULL)
     {
         if ($id_genero) {
-            $canciones = $this->model->filtroPorCancion($id_genero);
+            $canciones = $this->model->getCancionByGenero($id_genero);
             $genero = $this->modelGenero->getGenero($id_genero);
             $this->view->showCanciones($canciones, $genero);
         } else {

@@ -2,32 +2,32 @@
 
 class AbmCancionView
 {
-    function listarCanciones($canciones, $generos, $id_editar = null)
+    function showCanciones($canciones, $generos, $id_editar = null)
     {
-        require_once 'templates/headerAbm.php';
+        require_once 'templates/headerAbm.phtml';
         require_once 'templates/admin_cancion.phtml';
         require_once 'templates/form_cancion.phtml';
-        require_once 'templates/footer.php';
+        require_once 'templates/footer.phtml';
     }
 
-    function listarLetra($cancion, $id_editar = null)
+    function showLetra($cancion, $id_editar = null)
     {
-        require_once 'templates/headerAbm.php';
+        require_once 'templates/headerAbm.phtml';
         require_once 'templates/ver_letra.phtml';
-        require_once 'templates/footer.php';
+        require_once 'templates/footer.phtml';
     }
 
-    function editarLetra($canciones, $id_editar = null, $error = null)
+    function editLetra($canciones, $id_editar = null, $error = null)
     {
-        require_once 'templates/headerAbm.php';
+        require_once 'templates/headerAbm.phtml';
         require_once 'templates/editar_letra.phtml';
-        require_once 'templates/footer.php';
+        require_once 'templates/footer.phtml';
     }
 
     function showFormCancion($generos)
     {
-        require_once 'templates/headerAbm.php';
+        require_once 'templates/headerAbm.phtml';
         require_once 'templates/form_cancion.phtml';
-        require_once 'templates/footer.php';
+        require_once 'templates/footer.phtml';
     }
 }
