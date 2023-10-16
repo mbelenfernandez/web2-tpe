@@ -1,4 +1,10 @@
-<div class="container mt-4">
+<?php
+require_once 'templates/show_error.phtml';
+// Verifica si se cumple la condición deseada
+// Tu código normal aquí
+if ($canciones == true) {
+    ?>
+    <div class="container mt-4">
         <tbody>
             <?php foreach ($canciones as $cancion) { ?>
                 <tr>
@@ -16,20 +22,18 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                
                                 <button type="submit" class="btn btn-primary">Guardar cambio</button>
                                 <a href="volverAbmCancion" type="button" class="btn btn-secondary ml-auto">Volver</a>
                             </form>
-                  <?php } ?>
+                        <?php } ?>
                     </td>
                 </tr>
             <?php } ?>
         </tbody>
-        </table>
     </div>
-<?php
-
-//} else {
-    //echo "No se pudo acceder a la propiedad del arreglo";
-//}
+    <?php
+} else {
+    // En caso de que la condición no se cumpla, lanza un error
+    showError("No se pudo acceder a la propiedad del arreglo");
+}
+?>
