@@ -17,7 +17,7 @@ class AbmCancionView
         require_once 'templates/footer.php';
     }
 
-    function editarLetra($canciones, $id_editar = null)
+    function editarLetra($canciones, $id_editar = null, $error = null)
     {
         require_once 'templates/headerAbm.php';
         require_once 'templates/editar_letra.phtml';

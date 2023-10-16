@@ -4,6 +4,7 @@ require_once "./app/controllers/cancion.controller.php";
 require_once "./app/controllers/auth.controller.php";
 require_once "./app/controllers/abmGenero.controller.php";
 require_once "./app/controllers/abmCancion.controller.php";
+require_once "./templates/show_error.phtml";
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
@@ -100,6 +101,6 @@ switch ($params[0]) {
         $controllerAbmGenero->volver();
         break;
     default:
-        echo "404 Page Not Found";
+        showError("404 Page Not Found");
         break;
 }
