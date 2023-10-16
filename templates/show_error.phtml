@@ -1,10 +1,11 @@
 <?php
 
-function showError($error){
+function showError($error)
+{
     require 'templates/header.phtml' ?>
     <div class='alert alert-danger' role='alert'>
         <?= $error ?>
-    </div> 
-    <?php require 'templates/footer.phtml';
+    </div>
+<?php require 'templates/footer.phtml';
 }
 ?>

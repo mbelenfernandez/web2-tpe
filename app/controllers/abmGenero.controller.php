@@ -42,7 +42,7 @@ class AbmGeneroController
     function removeGenero($id)
     {
         $existe = $this->model->verifyGeneroCancion($id);
-        
+
         if ($existe) {
             $generos = $this->model->getGeneros();
             $error = "El género a eliminar está siendo usado por una canción";

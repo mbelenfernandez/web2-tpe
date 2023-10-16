@@ -36,8 +36,7 @@ class CancionController
         } else {
             $canciones = $this->model->getCanciones();
             $genero = "Todos";
-            $this->view->showCanciones($canciones,$genero);
+            $this->view->showCanciones($canciones, $genero);
         }
-
     }
 }

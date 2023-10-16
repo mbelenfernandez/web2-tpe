@@ -3,20 +3,24 @@ require_once './app/views/auth.view.php';
 require_once './app/models/user.model.php';
 require_once './app/helpers/auth.helper.php';
 
-class AuthController {
+class AuthController
+{
     private $view;
     private $model;
 
-    function __construct() {
+    function __construct()
+    {
         $this->model = new UserModel();
         $this->view = new AuthView();
     }
 
-    public function showLogin() {
+    public function showLogin()
+    {
         $this->view->showLogin();
     }
 
-    public function auth() {
+    public function auth()
+    {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
@@ -34,8 +38,9 @@ class AuthController {
         }
     }
 
-    public function logout() {
+    public function logout()
+    {
         AuthHelper::logout();
-        header('Location: ' . BASE_URL . 'login');    
+        header('Location: ' . BASE_URL . 'login');
     }
 }

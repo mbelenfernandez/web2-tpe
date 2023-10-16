@@ -25,24 +25,24 @@
                             </form>
                         <?php } else { ?>
                             <?= $genero->descripcion; ?>
-                            <td>
-                                <?php if ($error != null && $id_editar == $genero->id_genero) { ?>
-                                    <div class='alert alert-danger' role='alert'>
-                                        <?= $error ?>
-                                    </div>
-                                    <td>
-                                        <a href="volverAbmGenero" type="button" class="btn btn-secondary">Volver</a>
-                                    </td>
-                                <?php } ?>
-                            </td>
-                        <?php } ?>
-                    </td>
                     <td>
-                        <?php if ($id_editar != $genero->id_genero) { ?>
-                            <a href="editarGenero/<?= $genero->id_genero ?>" class="btn btn-success">Editar</a>
-                            <a href="eliminarGenero/<?= $genero->id_genero ?>" class="btn btn-danger">Borrar</a>
-                        <?php } ?>
+                        <?php if ($error != null && $id_editar == $genero->id_genero) { ?>
+                            <div class='alert alert-danger' role='alert'>
+                                <?= $error ?>
+                            </div>
+                    <td>
+                        <a href="volverAbmGenero" type="button" class="btn btn-secondary">Volver</a>
                     </td>
+                <?php } ?>
+                </td>
+            <?php } ?>
+            </td>
+            <td>
+                <?php if ($id_editar != $genero->id_genero) { ?>
+                    <a href="editarGenero/<?= $genero->id_genero ?>" class="btn btn-success">Editar</a>
+                    <a href="eliminarGenero/<?= $genero->id_genero ?>" class="btn btn-danger">Borrar</a>
+                <?php } ?>
+            </td>
                 </tr>
             <?php } ?>
         </tbody>

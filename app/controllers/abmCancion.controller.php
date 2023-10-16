@@ -4,22 +4,25 @@ require_once './app/models/cancion.model.php';
 require_once './app/helpers/auth.helper.php';
 require_once './templates/show_error.phtml';
 
-class AbmCancionController {
+class AbmCancionController
+{
     private $model;
-    private $modelGenero;   
+    private $modelGenero;
     private $view;
 
-    public function __construct() {
-       AuthHelper::verify();
-       $this->view = new AbmCancionView(); 
-       $this->model = new CancionModel();
-       $this->modelGenero = new GeneroModel();
+    public function __construct()
+    {
+        AuthHelper::verify();
+        $this->view = new AbmCancionView();
+        $this->model = new CancionModel();
+        $this->modelGenero = new GeneroModel();
     }
 
-    function showCanciones (){
+    function showCanciones()
+    {
         $canciones = $this->model->getCanciones();
         $generos = $this->modelGenero->getGeneros();
-        $this->view->showCanciones($canciones,$generos);
+        $this->view->showCanciones($canciones, $generos);
     }
 
     public function addCancion()
@@ -29,42 +32,47 @@ class AbmCancionController {
         $duracion = $_POST['duracion'];
         $letra = $_POST['letra'];
         $id_genero = $_POST['id_genero'];
-    
+
         if (empty($titulo) || empty($artista) || empty($duracion) || empty($letra) || empty($id_genero)) {
             showError("Campos incompletos");
             return;
         }
-    
+
         $id = $this->model->insertCancion($titulo, $artista, $duracion, $letra, $id_genero);
         if ($id) {
             header('Location: ' . BASE_URL . 'abmCancion');
         } else {
             echo "Error insertando canción";
         }
-    }    
+    }
 
-    function  removeCancion ($id){
+    function  removeCancion($id)
+    {
         $this->model->deleteCancion($id);
         header('Location: ' . BASE_URL . 'abmCancion');
     }
 
-    function showEditCancion($id){
+    function showEditCancion($id)
+    {
         $canciones = $this->model->getCanciones();
         $generos = $this->modelGenero->getGeneros();
         $this->view->showCanciones($canciones, $generos, $id);
     }
 
-    function editLetra($id){
+    function editLetra($id)
+    {
         $canciones = $this->model->getCanciones();
         $this->view->editLetra($canciones, $id, "No se pudo acceder a la propiedad del arreglo");
     }
 
-    function showLetra($id){
+    function showLetra($id)
+    {
         $cancion = $this->model->getCancionById($id);
         $this->view->showLetra($cancion, $id);
     }
 
-    function updateCancion($id_cancion){
+    function updateCancion($id_cancion)
+    {
         if ($_POST) {
             $titulo = $_POST['titulo'];
             $artista = $_POST['artista'];
@@ -79,7 +87,8 @@ class AbmCancionController {
         }
     }
 
-    function updateLetra($id){
+    function updateLetra($id)
+    {
         if ($_POST) {
             $letra = $_POST['letra'];
 
@@ -92,7 +101,8 @@ class AbmCancionController {
         }
     }
 
-    function volver (){
+    function volver()
+    {
         header('Location: ' . BASE_URL . 'abmCancion');
     }
 }

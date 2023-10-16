@@ -24,9 +24,9 @@
                 <div class="form-group">
                     <label for="id_genero">Género</label>
                     <select required name="id_genero" id="id_genero" class="form-control">
-                        <?php 
+                        <?php
                         foreach ($generos as $genero) { ?>
-                            <option value="<?= $genero->id_genero?>"><?= $genero->descripcion ?></option>
+                            <option value="<?= $genero->id_genero ?>"><?= $genero->descripcion ?></option>
                         <?php } ?>
                     </select>
                 </div>

@@ -1,7 +1,7 @@
 <?php
 require_once 'templates/show_error.phtml';
 if ($canciones == true) {
-    ?>
+?>
     <div class="container mt-4">
         <tbody>
             <?php foreach ($canciones as $cancion) { ?>
@@ -29,7 +29,7 @@ if ($canciones == true) {
             <?php } ?>
         </tbody>
     </div>
-    <?php
+<?php
 } else {
     showError("No se pudo acceder a la propiedad del arreglo");
 }
