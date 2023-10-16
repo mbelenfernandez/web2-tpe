@@ -27,7 +27,7 @@ class AbmGeneroController
         $this->view->showFormGenero();
         $descripcion = $_POST['descripcion'];
         if (empty($descripcion)) {
-            echo "Campos incompletos";
+            showError("Campos incompletos");
             return;
         }
 
@@ -35,7 +35,7 @@ class AbmGeneroController
         if ($id) {
             header('Location: ' . BASE_URL . 'abmGenero');
         } else {
-            echo "Error insertando género";
+            showError("Error insertando género");
         }
     }
 
@@ -68,7 +68,7 @@ class AbmGeneroController
                 $this->model->updateGenero($id, $descripcion);
                 header('Location: ' . BASE_URL . 'abmGenero');
             } else {
-                echo "error";
+                showError("Error actualizando género");
             }
         }
     }

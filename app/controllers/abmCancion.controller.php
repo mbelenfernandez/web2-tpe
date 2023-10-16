@@ -42,7 +42,7 @@ class AbmCancionController
         if ($id) {
             header('Location: ' . BASE_URL . 'abmCancion');
         } else {
-            echo "Error insertando canción";
+            showError("Error insertando canción");
         }
     }
 
@@ -82,7 +82,7 @@ class AbmCancionController
                 $this->model->updateCancion($id_cancion, $titulo, $artista, $duracion, $id_genero);
                 header('Location: ' . BASE_URL . 'abmCancion');
             } else {
-                echo "error actualizando cancion";
+                showError("Error actualizando canción");
             }
         }
     }
@@ -96,7 +96,7 @@ class AbmCancionController
                 $this->model->updateLetra($id, $letra);
                 header('Location: ' . BASE_URL . 'verLetra/' . $id);
             } else {
-                echo "error";
+                showError("Error actualizando letra");
             }
         }
     }
