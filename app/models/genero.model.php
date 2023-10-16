@@ -44,5 +44,11 @@ class GeneroModel{
         $query->execute([$descripcion, $id]);
     }
 
+    function verifyGeneroCancion ($id) {
+        $query = $this->db->prepare('SELECT 1 FROM cancion WHERE id_genero=?');
+        $query->execute([$id]);
+        $existe = $query->fetchAll(PDO::FETCH_OBJ);
+        return $existe;
+    }
     
 }

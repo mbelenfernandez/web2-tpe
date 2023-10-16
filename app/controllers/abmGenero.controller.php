@@ -2,6 +2,7 @@
 require_once './app/views/abmGenero.view.php';
 require_once './app/models/genero.model.php';
 require_once './app/helpers/auth.helper.php';
+require_once 'templates/show_error.phtml';
 
 class AbmGeneroController
 {
@@ -38,17 +39,26 @@ class AbmGeneroController
         }
     }
 
-    function  removeGeneros ($id){
-        $this->model->deleteGenero($id);
-        header('Location: ' . BASE_URL . 'abmGenero');
+    function removeGeneros($id)
+    {
+        $existe = $this->model->verifyGeneroCancion($id);
+
+        if ($existe) {
+            showError("El género a eliminar está siendo usado por una canción");
+        } else  {
+            $this->model->deleteGenero($id);
+            header('Location: ' . BASE_URL . 'abmGenero');
+        }
     }
 
-    function editGenero($id){
+    function editGenero($id)
+    {
         $generos = $this->model->getGeneros();
         $this->view->listarGeneros($generos, $id);
     }
 
-    function updateGenero($id){
+    function updateGenero($id)
+    {
         if ($_POST) {
             $descripcion = $_POST['descripcion'];
 
@@ -62,7 +72,8 @@ class AbmGeneroController
         }
     }
 
-    function volver (){
+    function volver()
+    {
         header('Location: ' . BASE_URL . 'abmGenero');
     }
 }
