@@ -42,9 +42,11 @@ class AbmGeneroController
     function removeGenero($id)
     {
         $existe = $this->model->verifyGeneroCancion($id);
-
+        
         if ($existe) {
-            showError("El género a eliminar está siendo usado por una canción");
+            $generos = $this->model->getGeneros();
+            $error = "El género a eliminar está siendo usado por una canción";
+            $this->view->showGeneros($generos, $id, $error);
         } else {
             $this->model->deleteGenero($id);
             header('Location: ' . BASE_URL . 'abmGenero');

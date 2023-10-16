@@ -7,6 +7,7 @@
                 <th>Título</th>
                 <th>Artista</th>
                 <th>Duración</th>
+                <th>Género</th>
                 <th>Acción</th>
             </tr>
         </thead>
@@ -14,21 +15,28 @@
             <?php foreach ($canciones as $cancion) { ?>
                 <tr>
                     <td> <?= $cancion->id_cancion ?></td>
-                        <?php if ($id_editar == $cancion->id_cancion) { ?>
-                            <form action="updateCancion/<?= $cancion->id_cancion ?>" method="POST">
-                                <td> <input required name="titulo" type="text" value="<?= $cancion->titulo ?>" class="form-control"> </td>
-                                <td> <input required name="artista" type="text" value="<?= $cancion->artista ?>" class="form-control"> </td>
-                                <td> <input required name="duracion" type="text" value="<?= $cancion->duracion ?>" class="form-control"> </td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary">Guardar</button>
-                                    <a href="volverAbmCancion" type="button" class="btn btn-secondary">Cancelar</a>
-                                </td>
-                            </form>
-                        <?php } else { 
-                                    ?> <td> <?= $cancion->titulo; ?> </td>
-                                    <td> <?= $cancion->artista; ?> </td>
-                                    <td> <?= $cancion->duracion; ?> </td> <?php
-                                } ?>
+                    <?php if ($id_editar == $cancion->id_cancion) { ?>
+                        <form action="updateCancion/<?= $cancion->id_cancion ?>" method="POST">
+                            <td> <input required name="titulo" type="text" value="<?= $cancion->titulo ?>" class="form-control"> </td>
+                            <td> <input required name="artista" type="text" value="<?= $cancion->artista ?>" class="form-control"> </td>
+                            <td> <input required name="duracion" type="text" value="<?= $cancion->duracion ?>" class="form-control"> </td>
+                            <td> <select required name="id_genero" id="id_genero" class="form-control">
+                                    <?php
+                                    foreach ($generos as $genero) { ?>
+                                        <option value="<?= $genero->id_genero ?>"><?= $genero->descripcion ?></option>
+                                    <?php } ?>
+                                </select> </td>
+                            <td>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <a href="volverAbmCancion" type="button" class="btn btn-secondary">Cancelar</a>
+                            </td>
+                        </form>
+                    <?php } else {
+                    ?> <td> <?= $cancion->titulo; ?> </td>
+                        <td> <?= $cancion->artista; ?> </td>
+                        <td> <?= $cancion->duracion; ?> </td>
+                        <td> <?= $cancion->descripcion ?></td>
+                    <?php } ?>
                     <td>
                         <?php if ($id_editar != $cancion->id_cancion) { ?>
                             <a href="verLetra/<?= $cancion->id_cancion ?>" class="btn btn-primary">Ver letra</a>

@@ -13,7 +13,7 @@
                 <tr>
                     <td> <?= $genero->id_genero ?></td>
                     <td>
-                        <?php if ($id_editar == $genero->id_genero) { ?>
+                        <?php if ($id_editar == $genero->id_genero && $error == null) { ?>
                             <form action="updateGenero/<?= $genero->id_genero ?>" method="POST">
                                 <div class="input-group">
                                     <input required name="descripcion" type="text" class="form-control" value="<?= $genero->descripcion ?>">
@@ -25,6 +25,16 @@
                             </form>
                         <?php } else { ?>
                             <?= $genero->descripcion; ?>
+                            <td>
+                                <?php if ($error != null && $id_editar == $genero->id_genero) { ?>
+                                    <div class='alert alert-danger' role='alert'>
+                                        <?= $error ?>
+                                    </div>
+                                    <td>
+                                        <a href="volverAbmGenero" type="button" class="btn btn-secondary">Volver</a>
+                                    </td>
+                                <?php } ?>
+                            </td>
                         <?php } ?>
                     </td>
                     <td>

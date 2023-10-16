@@ -48,7 +48,7 @@ class AbmCancionController {
         header('Location: ' . BASE_URL . 'abmCancion');
     }
 
-    function editCancion($id){
+    function showEditCancion($id){
         $canciones = $this->model->getCanciones();
         $generos = $this->modelGenero->getGeneros();
         $this->view->showCanciones($canciones, $generos, $id);
@@ -64,18 +64,18 @@ class AbmCancionController {
         $this->view->showLetra($cancion, $id);
     }
 
-    function updateCancion($id){
+    function updateCancion($id_cancion){
         if ($_POST) {
             $titulo = $_POST['titulo'];
             $artista = $_POST['artista'];
             $duracion = $_POST['duracion'];
-
-            if ((isset($titulo) && !empty($titulo)) && (isset($artista) && !empty($artista)) && (isset($duracion) && !empty($duracion))) {
+            $id_genero = $_POST['id_genero'];
+            if ((isset($titulo) && !empty($titulo)) && (isset($artista) && !empty($artista)) && (isset($duracion) && !empty($duracion)) && (isset($id_genero) && !empty($id_genero))) {
                 // $this->view->showError("Debe completar todos los campos");
-                $this->model->updateCancion($id, $titulo, $artista, $duracion);
+                $this->model->updateCancion($id_cancion, $titulo, $artista, $duracion, $id_genero);
                 header('Location: ' . BASE_URL . 'abmCancion');
             } else {
-                echo "error";
+                echo "error actualizando cancion";
             }
         }
     }

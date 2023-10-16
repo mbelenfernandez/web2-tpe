@@ -23,11 +23,4 @@ class AbmCancionView
         require_once 'templates/editar_letra.phtml';
         require_once 'templates/footer.phtml';
     }
-
-    function showFormCancion($generos)
-    {
-        require_once 'templates/headerAbm.phtml';
-        require_once 'templates/form_cancion.phtml';
-        require_once 'templates/footer.phtml';
-    }
 }

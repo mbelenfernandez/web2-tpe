@@ -22,7 +22,7 @@ if (!empty($_GET['action'])) {
 // eliminarCancion/:id  ->      AbmCancionController->removeCanciones($id);
 // agregarCancion       ->      AbmCancionController->addCancion();
 // editarGenero/:id     ->      AbmGeneroController->editGenero($id);
-// editarCancion/:id    ->      AbmCancionController->editCancion($id);
+// editarCancion/:id    ->      AbmCancionController->showEditCancion($id);
 // modificarLetra/:id   ->      AbmCancionController->editLetra($id);
 // verLetra/:id         ->      AbmCancionController->verLetra($id);
 // updateGenero/:id     ->      AbmGeneroController->updateGenero($id);
@@ -73,7 +73,7 @@ switch ($params[0]) {
         break;
     case 'editarCancion':
         $controllerAbmCancion = new AbmCancionController();
-        $controllerAbmCancion->editCancion($params[1]);
+        $controllerAbmCancion->showEditCancion($params[1]);
         break;
     case 'modificarLetra':
         $controllerAbmCancion = new AbmCancionController();
