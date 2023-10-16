@@ -11,7 +11,7 @@ class AbmGeneroController
 
     public function __construct()
     {
-        //AuthHelper::verify();
+        AuthHelper::verify();
         $this->view = new AbmGeneroView();
         $this->model = new GeneroModel();
     }
@@ -45,7 +45,7 @@ class AbmGeneroController
 
         if ($existe) {
             showError("El género a eliminar está siendo usado por una canción");
-        } else  {
+        } else {
             $this->model->deleteGenero($id);
             header('Location: ' . BASE_URL . 'abmGenero');
         }
