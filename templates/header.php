@@ -25,7 +25,7 @@
                         <a class="nav-link" aria-current="page" href="generos">Géneros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="canciones">Canciones</a>
+                        <a class="nav-link" aria-current="page" href="canciones/">Canciones</a>
                     </li>                       
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="login">Login</a>

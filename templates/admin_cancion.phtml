@@ -14,7 +14,6 @@
             <?php foreach ($canciones as $cancion) { ?>
                 <tr>
                     <td> <?= $cancion->id_cancion ?></td>
-                    <td>
                         <?php if ($id_editar == $cancion->id_cancion) { ?>
                             <form action="updateCancion/<?= $cancion->id_cancion ?>" method="POST">
                                 <td> <input required name="titulo" type="text" value="<?= $cancion->titulo ?>" class="form-control"> </td>
@@ -30,7 +29,6 @@
                                     <td> <?= $cancion->artista; ?> </td>
                                     <td> <?= $cancion->duracion; ?> </td> <?php
                                 } ?>
-                    </td>
                     <td>
                         <?php if ($id_editar != $cancion->id_cancion) { ?>
                             <a href="verLetra/<?= $cancion->id_cancion ?>" class="btn btn-primary">Ver letra</a>

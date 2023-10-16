@@ -1,6 +1,11 @@
-<?php foreach ($genero as $genero) { ?>
-    <h1> <?= $genero->descripcion ?> </h1>
-<?php } ?>
+<?php
+if ($genero == "Todos") { ?>
+    <h1>Todos</h1>
+    <?php } else {
+    foreach ($genero as $genero) { ?>
+        <h1> <?= $genero->descripcion ?> </h1>
+<?php }
+} ?>
 <ul class="list-group">
     <?php foreach ($canciones as $cancion) { ?>
         <li class="list-group-item">

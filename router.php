@@ -14,7 +14,6 @@ if (!empty($_GET['action'])) {
 }
 
 // generos              ->      GeneroController ->showGenero();
-// canciones            ->      CancionController->showCanciones();
 // cancion/:id          ->      CancionController->showCancion($id);
 // abmGenero            ->      AbmGeneroController->listarGeneros();
 // abmCancion           ->      AbmCancionController->listarCanciones();
@@ -29,7 +28,7 @@ if (!empty($_GET['action'])) {
 // updateGenero/:id     ->      AbmGeneroController->updateGenero($id);
 // updateCancion/:id    ->      AbmCancionController->updateCancion($id);
 // updateLetra/:id      ->      AbmCancionController->updateLetra($id);
-// filtroCanciones/:id  ->      CancionController->filtroCanciones($id);
+// canciones/:id  ->      CancionController->canciones($id);
 // login                ->      AuthController->showLogin();
 // auth                 ->      AuthController->auth();
 // logout               ->      AuthController->logout();
@@ -43,10 +42,6 @@ switch ($params[0]) {
     case 'generos':
         $controllerGenero = new GeneroController();
         $controllerGenero->showGenero();
-        break;
-    case 'canciones':
-        $controllerCancion = new CancionController();
-        $controllerCancion->showCanciones();
         break;
     case 'cancion':
         $controllerCancion = new CancionController();
@@ -104,7 +99,7 @@ switch ($params[0]) {
         $controllerAbmCancion = new AbmCancionController();
         $controllerAbmCancion->updateLetra($params[1]);
         break;
-    case 'filtroCanciones':
+    case 'canciones':
         $controllerCancion = new CancionController();
         $controllerCancion->filtroCanciones($params[1]);
         break;
